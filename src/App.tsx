@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, HashRouter } from 'react-router-dom';
+// import { Route, HashRouter } from 'react-router-dom';
 import GlobalStyles from './components/styles/global';
 import NavBar from './components/ui/headerContainer/NavBar';
 import { HeaderContainer } from './components/styles/components/headerStyles';
@@ -14,12 +14,9 @@ function App(): JSX.Element {
       <HeaderContainer>
         <NavBar />
         <HeaderDescription />
-      </HeaderContainer>
-      <main>
-        <HashRouter>
-          <Route path="/" element={<LandingPage />} />
-        </HashRouter>
-      </main>
+      </HeaderContainer>      
+      <LandingPage />
+          {/* <Route path="/" element={} /> */}             
       <Footer/>
     </>
   );
