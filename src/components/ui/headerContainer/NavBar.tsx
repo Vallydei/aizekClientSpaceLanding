@@ -7,7 +7,7 @@ import {
   Button,
   ButtonContainer,
   LinkEntry,
-} from '../styles/components/header';
+} from '../../styles/components/headerStyles';
 import Logo from './Logo';
 
 export default function NavBar(): JSX.Element {

@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: wheat;
+    background: #F8F9FF;
   }
 `;
 
