@@ -23,7 +23,7 @@ export default function HeaderDescription() {
         </div>
         <ImagesBox>
           <AnalyticsImg src="./img/main-screen.png" alt="пример аналитики" />
-          <DiagramImg src="/img/audience.png" alt="диаграмма" />
+          <DiagramImg src="./img/audience.png" alt="диаграмма" />
         </ImagesBox>
       </HeaderDescriptionContainer>
     </>
