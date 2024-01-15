@@ -1,10 +1,13 @@
 import React from 'react';
-import { ArticleBox, Feature, FeatureList, FeatureText, FeatureTitle, Text, Title } from '../../styles/components/cluesStyles';
+import { FlexBoxColumn, FlexBoxRow } from '../FlexBox/FlexBox';
+import { Title } from '../Title/Title';
+import { Text } from '../Text/Text';
+
 
 export default function CluesArticle(): JSX.Element {
   return (
-    <ArticleBox>
-      <Title>Ключевые моменты</Title>
+    <FlexBoxColumn>
+      <Title>Ключевые выгоды</Title>
       <div>
         <Text>
           Вместо того, чтобы часами копировать и вставлять, приводить к одному формату, проверять
@@ -12,8 +15,8 @@ export default function CluesArticle(): JSX.Element {
           выполнять роботы. А вы повысите ROI на ФОТ.
         </Text>
       </div>
-      <FeatureList>
-        <Feature>
+      <FlexBoxRow>
+        <FlexBoxColumn>
           {' '}
           <svg
             width="60"
@@ -90,13 +93,13 @@ export default function CluesArticle(): JSX.Element {
               </clipPath>
             </defs>
           </svg>
-          <FeatureTitle>В 5 раз быстрее сбор отчетов</FeatureTitle>
-          <FeatureText>
+          <Title small>В 5 раз быстрее сбор отчетов</Title>
+          <Text>
             Посчитайте время, которое вы сэкономите по сравнению с ручными выгрузками или старыми
             скриптами, которые постоянно надо чинить
-          </FeatureText>
-        </Feature>
-        <Feature>
+          </Text>
+        </FlexBoxColumn>
+        <FlexBoxColumn>
           {' '}
           <svg
             width="60"
@@ -146,13 +149,13 @@ export default function CluesArticle(): JSX.Element {
               fill="#ef2a82"
             />
           </svg>
-          <FeatureTitle>Натройка под вашу задачу</FeatureTitle>
-          <FeatureText>
+          <Title small>Натройка под вашу задачу</Title>
+          <Text>
             У вас постоянно появляются новые гипотезы, источники данных, а значит - требования к
             содержанию и формату отчетов
-          </FeatureText>
-        </Feature>
-        <Feature>
+          </Text>
+        </FlexBoxColumn>
+        <FlexBoxColumn>
           {' '}
           <svg
             width="60"
@@ -201,13 +204,13 @@ export default function CluesArticle(): JSX.Element {
               </clipPath>
             </defs>
           </svg>
-          <FeatureTitle>Данные для умных решений</FeatureTitle>
-          <FeatureText>
+          <Title small>Данные для умных решений</Title>
+          <Text>
             Конечно, автоматические отчеты не заменят ваш опыт и вашу интуицию. Но подскажут как
             улучшить достижение KPI.
-          </FeatureText>
-        </Feature>
-      </FeatureList>{' '}
-    </ArticleBox>
+          </Text>
+        </FlexBoxColumn>
+      </FlexBoxRow>{' '}
+    </FlexBoxColumn>
   );
 }

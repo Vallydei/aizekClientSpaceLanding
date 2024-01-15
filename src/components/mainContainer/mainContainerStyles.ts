@@ -1,4 +1,5 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.main`
-margin: 0 210px;` 
+width: 1180px;
+margin: 0 auto;` 
