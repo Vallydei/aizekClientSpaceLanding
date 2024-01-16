@@ -2,19 +2,20 @@ import React from 'react';
 import { FlexBoxColumn, FlexBoxRow } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
+import { Container } from './mainContainerStyles';
 
 
 export default function CluesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
       <Title>Ключевые выгоды</Title>
-      <div>
+      <Container>
         <Text>
           Вместо того, чтобы часами копировать и вставлять, приводить к одному формату, проверять
           данные на целостность, ваша команда наконец-то займется работой, которую пока не могут
           выполнять роботы. А вы повысите ROI на ФОТ.
         </Text>
-      </div>
+      </Container>
       <FlexBoxRow>
         <FlexBoxColumn>
           {' '}
