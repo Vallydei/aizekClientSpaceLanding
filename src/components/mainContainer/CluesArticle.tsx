@@ -1,23 +1,21 @@
 import React from 'react';
-import { FlexBoxColumn, FlexBoxRow } from '../FlexBox/FlexBox';
+import { FlexBoxColumn, FlexBoxMain, FlexBoxRow } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
-import { Container } from './mainContainerStyles';
-
 
 export default function CluesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
       <Title>Ключевые выгоды</Title>
-      <Container>
-        <Text>
+      <FlexBoxMain>
+        <Text bigger>
           Вместо того, чтобы часами копировать и вставлять, приводить к одному формату, проверять
           данные на целостность, ваша команда наконец-то займется работой, которую пока не могут
           выполнять роботы. А вы повысите ROI на ФОТ.
         </Text>
-      </Container>
+      </FlexBoxMain>
       <FlexBoxRow>
-        <FlexBoxColumn>
+        <FlexBoxMain>
           {' '}
           <svg
             width="60"
@@ -99,8 +97,8 @@ export default function CluesArticle(): JSX.Element {
             Посчитайте время, которое вы сэкономите по сравнению с ручными выгрузками или старыми
             скриптами, которые постоянно надо чинить
           </Text>
-        </FlexBoxColumn>
-        <FlexBoxColumn>
+        </FlexBoxMain>
+        <FlexBoxMain>
           {' '}
           <svg
             width="60"
@@ -155,8 +153,8 @@ export default function CluesArticle(): JSX.Element {
             У вас постоянно появляются новые гипотезы, источники данных, а значит - требования к
             содержанию и формату отчетов
           </Text>
-        </FlexBoxColumn>
-        <FlexBoxColumn>
+        </FlexBoxMain>
+        <FlexBoxMain>
           {' '}
           <svg
             width="60"
@@ -210,7 +208,7 @@ export default function CluesArticle(): JSX.Element {
             Конечно, автоматические отчеты не заменят ваш опыт и вашу интуицию. Но подскажут как
             улучшить достижение KPI.
           </Text>
-        </FlexBoxColumn>
+        </FlexBoxMain>
       </FlexBoxRow>{' '}
     </FlexBoxColumn>
   );

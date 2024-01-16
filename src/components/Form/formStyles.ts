@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-export const FormForDemostration = styled.div`
+export const FormStyled = styled.form`
   max-width: 990px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  margin: 0 auto;
   gap: 25px;
+  text-align: center;
+  margin: 73px auto 0;
+
   position: relative;
   &::after {
     content: '';
@@ -15,13 +16,9 @@ export const FormForDemostration = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 110%;
+    width: 100%;
     max-width: 1000px;
-    height: 100%;
-    max-height: 110%;
+    height: 150%;
     z-index: -1;
   }
 `;
-
-
-

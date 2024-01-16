@@ -1,15 +1,15 @@
 import React from 'react';
-import { FormForDemostration } from './formStyles';
 import { FlexBoxForm } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { FormText } from '../Text/Text';
 import { Input } from '../Input/Input';
 import { Textarea } from '../Textarea/Textarea';
 import Button from '../Button/Button';
+import { FormStyled } from './formStyles';
 
 export default function Form() {
   return (
-    <FormForDemostration>
+    <FormStyled>
       <FlexBoxForm>
         <Title medium>Узнать больше и протестировать продукт</Title>
         <FormText>
@@ -21,6 +21,6 @@ export default function Form() {
       <Input type="email" placeholder="Email" />
       <Textarea placeholder="Ваш вопрос" />
       <Button>Отправить запрос</Button>
-    </FormForDemostration>
+    </FormStyled>
   );
 }

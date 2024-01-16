@@ -7,7 +7,7 @@ export const FlexBoxHeader = styled(FlexBoxColumn)`
   overflow: hidden;
 `;
 
-export const FlexBoxHeaderBackground = styled.div`
+export const BoxHeaderBackground = styled.div`
   width: 100%;
   height: 98%;
   background-color: #172755;
@@ -41,7 +41,7 @@ export const FlexBoxHeaderBackground = styled.div`
   }
 `;
 
-export const FlexBoxHeaderBackground2 = styled.div`
+export const BoxHeaderBackground2 = styled.div`
   width: 100%;
   height: 815px;
   overflow: hidden;

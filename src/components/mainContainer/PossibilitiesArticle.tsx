@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  PossibilitieImg,
-  PossibilitieLeftContainer,
-  PossibilitieRightContainer,
-  ImageScheme,
-} from './possibilitiesArticleStyles';
-import { FlexBoxColumn, FlexBoxPossibilitie, FlexBoxRow } from '../FlexBox/FlexBox';
+import { FlexBoxColumn, FlexBoxMainDiv, FlexBoxPossibilitie } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
+import { ImgMain, Imgscheme, LeftContainer, RightContainer } from './mainContainerStyles';
 
 export default function PossibilitiesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
-      <FlexBoxRow>
-        <PossibilitieLeftContainer>
+      <FlexBoxMainDiv>
+        <LeftContainer>
           <FlexBoxPossibilitie>
             <Title>
               Ваши данные,
@@ -25,17 +20,17 @@ export default function PossibilitiesArticle(): JSX.Element {
               многоуровневой системе защиты доступа (вплоть до полной локализации хранения данных).
             </Text>
           </FlexBoxPossibilitie>
-        </PossibilitieLeftContainer>
-        <PossibilitieRightContainer>
-          <PossibilitieImg src="./img/radar-back.png" alt="диаграмма 2" />
-        </PossibilitieRightContainer>
-      </FlexBoxRow>
+        </LeftContainer>
+        <RightContainer>
+          <ImgMain src="./img/radar-back.png" alt="диаграмма 2" />
+        </RightContainer>
+      </FlexBoxMainDiv>
 
-      <FlexBoxRow>
-        <PossibilitieLeftContainer>
-          <PossibilitieImg src="./img/planfact-back.png" alt="диаграмма 3" />
-        </PossibilitieLeftContainer>
-        <PossibilitieRightContainer>
+      <FlexBoxMainDiv>
+        <LeftContainer>
+          <ImgMain src="./img/planfact-back.png" alt="диаграмма 3" />
+        </LeftContainer>
+        <RightContainer>
           <FlexBoxPossibilitie>
             <Title>
               План-факт на автомате
@@ -46,11 +41,11 @@ export default function PossibilitiesArticle(): JSX.Element {
               находите новые источники роста для вашего бренда.
             </Text>
           </FlexBoxPossibilitie>
-        </PossibilitieRightContainer>
-      </FlexBoxRow>
+        </RightContainer>
+      </FlexBoxMainDiv>
 
-      <FlexBoxRow>
-        <PossibilitieLeftContainer>
+      <FlexBoxMainDiv>
+        <LeftContainer>
           <FlexBoxPossibilitie>
             <Title>Инсайты</Title>
             <Text bigger>
@@ -59,12 +54,12 @@ export default function PossibilitiesArticle(): JSX.Element {
               окружения и трендов.
             </Text>
           </FlexBoxPossibilitie>
-        </PossibilitieLeftContainer>
-        <PossibilitieRightContainer>
-          <PossibilitieImg src="./img/cjm-back.png" alt=" " />
-          <ImageScheme src="./img/cjm-modeling 2.png" alt="модель" />
-        </PossibilitieRightContainer>
-      </FlexBoxRow>
+        </LeftContainer>
+        <RightContainer>
+          <ImgMain src="./img/cjm-back.png" alt=" " />
+          <Imgscheme src="./img/cjm-modeling 2.png" alt="модель" />
+        </RightContainer>
+      </FlexBoxMainDiv>
     </FlexBoxColumn>
   );
 }

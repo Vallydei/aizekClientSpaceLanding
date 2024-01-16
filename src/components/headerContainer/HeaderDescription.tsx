@@ -4,8 +4,8 @@ import {
   BoxHeader,
   DiagramImg,
   FlexBoxHeader,
-  FlexBoxHeaderBackground,
-  FlexBoxHeaderBackground2,
+  BoxHeaderBackground,
+  BoxHeaderBackground2,
   FlexBoxHeaderDescription,
 } from './headerStyles';
 import Button from '../Button/Button';
@@ -16,8 +16,8 @@ import NavBar from './NavBar';
 export default function Header() {
   return (
     <FlexBoxHeader jcStart>
-      <FlexBoxHeaderBackground2 />
-      <FlexBoxHeaderBackground />
+      <BoxHeaderBackground2 />
+      <BoxHeaderBackground />
       <NavBar />
       <FlexBoxHeaderDescription>
         <BoxHeader>
