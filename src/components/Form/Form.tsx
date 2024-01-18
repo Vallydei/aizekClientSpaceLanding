@@ -10,8 +10,8 @@ import { FormStyled } from './formStyles';
 export default function Form() {
   return (
     <FormStyled>
-      <FlexBoxForm>
-        <Title medium>Узнать больше и протестировать продукт</Title>
+      <FlexBoxForm id='help'>
+        <Title medium >Узнать больше и протестировать продукт</Title>
         <FormText>
           Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию
         </FormText>

@@ -9,10 +9,8 @@ export const StyledLink = styled(Link)<StyledLinkProps>`
   color: #8794ba;
   padding: 10px 15px;
   font-size: ${props => props.small ? '14px' : '16px'};
-  &:hover {
+  &:hover, &:active {
     cursor: pointer;
-    background: #ef2a82;
-    border-radius: 68px;
-    color: #ffffff;
+    color: #A8B2CC;
    }
 `;

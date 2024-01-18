@@ -4,7 +4,6 @@ import { FlexBoxColumn } from '../FlexBox/FlexBox';
 export const FooterContainer = styled.footer`
   position: relative;
   height: 1050px;
-  /* overflow: hidden; */
 `;
 
 export const BoxFooterBackground = styled.div`

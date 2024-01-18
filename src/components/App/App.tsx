@@ -1,17 +1,23 @@
 import React from 'react';
-// import { Route, HashRouter } from 'react-router-dom';
+
 import GlobalStyles from './global';
-import LandingPage from '../LandingPage';
 import Header from '../headerContainer/HeaderDescription';
 import Footer from '../footerContainer/Footer';
+import Form from '../Form/Form';
+import PossibilitiesArticle from '../mainContainer/PossibilitiesArticle';
+import CluesArticle from '../mainContainer/CluesArticle';
+import { MainContainer } from '../mainContainer/mainContainerStyles';
 
 function App(): JSX.Element {
   return (
     <>
-      <GlobalStyles />     
-      <Header/>
-      <LandingPage />
-      {/* <Route path="/" element={} /> */}
+      <GlobalStyles />
+      <Header />
+      <MainContainer>
+        <CluesArticle />
+        <PossibilitiesArticle />
+        <Form />
+      </MainContainer>
       <Footer />
     </>
   );

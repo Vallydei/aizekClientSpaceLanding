@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import isPropValid from '@emotion/is-prop-valid';
 
 type CustomFlexBoxProps = {
   jcStart?: boolean;
@@ -6,31 +7,35 @@ type CustomFlexBoxProps = {
   jcSpaceBetween?: boolean;
 };
 
-export const FlexBoxColumn = styled.div<CustomFlexBoxProps>`
+export const FlexBoxColumn = styled('div', {
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<CustomFlexBoxProps>`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: ${(props) =>
     props.jcStart
-      ? 'start'
+      ? 'flex-start'
       : props.jcEnd
-        ? 'end'
+        ? 'flex-end'
         : props.jcSpaceBetween
           ? 'space-between'
           : 'center'};
   gap: 20px;
 `;
 
-export const FlexBoxRow = styled.div<CustomFlexBoxProps>`
+export const FlexBoxRow = styled('div', {
+  shouldForwardProp: (prop) => isPropValid(prop),
+})<CustomFlexBoxProps>`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: ${(props) =>
     props.jcStart
-      ? 'start'
+      ? 'flex-start'
       : props.jcEnd
-        ? 'end'
+        ? 'flex-end'
         : props.jcSpaceBetween
           ? 'space-between'
           : 'center'};

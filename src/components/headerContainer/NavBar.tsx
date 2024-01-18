@@ -11,13 +11,13 @@ export default function NavBar(): JSX.Element {
       <FlexBoxNav>
         <FlexBoxRow>
           <Logo />
-          <StyledLink to="/">Отчеты</StyledLink>
-          <StyledLink to="/">Данные</StyledLink>
-          <StyledLink to="/">Помощь</StyledLink>
-          <StyledLink to="/">Контакты</StyledLink>
+          <StyledLink to="/#reports"  onClick={(e) => {e.preventDefault(); document.getElementById('reports')?.scrollIntoView({ behavior: 'smooth' })}} >Отчеты</StyledLink>
+          <StyledLink to="/#data" onClick={(e) => {e.preventDefault(); document.getElementById('data')?.scrollIntoView({ behavior: 'smooth' })}}>Данные</StyledLink>
+          <StyledLink to="/#help" onClick={(e) => {e.preventDefault(); document.getElementById('help')?.scrollIntoView({ behavior: 'smooth' })}}>Помощь</StyledLink>
+          <StyledLink to="/#contacts" onClick={(e) => {e.preventDefault(); document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}}>Контакты</StyledLink>
         </FlexBoxRow>
         <FlexBoxRow jcEnd>
-          <StyledLink to="/">Вход</StyledLink>
+          <StyledLink to="/signin">Вход</StyledLink>
           <Button base>Заявка</Button>
         </FlexBoxRow>
       </FlexBoxNav>

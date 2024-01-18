@@ -7,10 +7,10 @@ import { ImgMain, Imgscheme, LeftContainer, RightContainer } from './mainContain
 export default function PossibilitiesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
-      <FlexBoxMainDiv>
+      <FlexBoxMainDiv id='data'>
         <LeftContainer>
           <FlexBoxPossibilitie>
-            <Title>
+            <Title >
               Ваши данные,
               <br /> ваши настройки
             </Title>

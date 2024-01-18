@@ -28,7 +28,7 @@ export default function Footer() {
         </Text>
 
         <FooterCarousel>Carousel</FooterCarousel>
-        <FooterAddress>
+        <FooterAddress id='contacts'>
           <div>logo</div>
           <nav>
             <FooterList>
@@ -54,7 +54,7 @@ export default function Footer() {
               </li>
             </FooterList>
           </nav>
-          <Button base type="button">
+          <Button  base type="button">
             Написать нам
           </Button>
         </FooterAddress>

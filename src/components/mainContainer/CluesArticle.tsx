@@ -6,7 +6,7 @@ import { Text } from '../Text/Text';
 export default function CluesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
-      <Title>Ключевые выгоды</Title>
+      <Title id='reports'>Ключевые выгоды</Title>
       <FlexBoxMain>
         <Text bigger>
           Вместо того, чтобы часами копировать и вставлять, приводить к одному формату, проверять
