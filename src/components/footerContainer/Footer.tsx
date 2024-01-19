@@ -4,7 +4,7 @@ import {
   BoxFooterBackground2,
   FlexBoxFooter,
   FooterAddress,
-  FooterCarousel,
+
   FooterContainer,
   FooterList,
 } from './footerStyles';
@@ -12,6 +12,8 @@ import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
 import { StyledLink } from '../Link/Link';
 import Button from '../Button/Button';
+import Carousel from './Carousel';
+import { FooterCarousel } from './carousel';
 
 export default function Footer() {
   return (
@@ -27,7 +29,9 @@ export default function Footer() {
           функционал.
         </Text>
 
-        <FooterCarousel>Carousel</FooterCarousel>
+        <FooterCarousel>
+          <Carousel/>
+        </FooterCarousel>
         <FooterAddress id='contacts'>
           <div>logo</div>
           <nav>

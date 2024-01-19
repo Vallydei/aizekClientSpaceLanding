@@ -33,25 +33,6 @@ export const FlexBoxFooter = styled(FlexBoxColumn)`
   text-align: center;
 `;
 
-export const FooterCarousel = styled.div`
-  width: 100%;
-  height: 440px;
-  background-color: #2a407c;
-  position: relative;
-  margin-bottom: 190px;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -131px;
-    width: 100%;
-    height: 1px;
-    background-color: #8794ba;
-    z-index: 0;
-  }
-`;
-
 export const FooterAddress = styled.address`
   display: flex;
   justify-content: space-between;

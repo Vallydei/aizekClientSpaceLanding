@@ -5,22 +5,27 @@ import { StyledLink } from '../Link/Link';
 import { FlexBoxRow } from '../FlexBox/FlexBox';
 import { FlexBoxNav } from './headerStyles';
 
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function NavBar(): JSX.Element {
   return (
-    <>
-      <FlexBoxNav>
-        <FlexBoxRow>
-          <Logo />
-          <StyledLink to="/#reports"  onClick={(e) => {e.preventDefault(); document.getElementById('reports')?.scrollIntoView({ behavior: 'smooth' })}} >Отчеты</StyledLink>
-          <StyledLink to="/#data" onClick={(e) => {e.preventDefault(); document.getElementById('data')?.scrollIntoView({ behavior: 'smooth' })}}>Данные</StyledLink>
-          <StyledLink to="/#help" onClick={(e) => {e.preventDefault(); document.getElementById('help')?.scrollIntoView({ behavior: 'smooth' })}}>Помощь</StyledLink>
-          <StyledLink to="/#contacts" onClick={(e) => {e.preventDefault(); document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}}>Контакты</StyledLink>
-        </FlexBoxRow>
-        <FlexBoxRow jcEnd>
-          <StyledLink to="/signin">Вход</StyledLink>
-          <Button base>Заявка</Button>
-        </FlexBoxRow>
-      </FlexBoxNav>
-    </>
+    <FlexBoxNav>
+      <FlexBoxRow>
+        <Logo />
+        <StyledLink to="/#reports" onClick={(e) => { e.preventDefault(); scrollToSection('reports'); }}>Отчеты</StyledLink>
+        <StyledLink to="/#data" onClick={(e) => { e.preventDefault(); scrollToSection('data'); }}>Данные</StyledLink>
+        <StyledLink to="/#help" onClick={(e) => { e.preventDefault(); scrollToSection('help'); }}>Помощь</StyledLink>
+        <StyledLink to="/#contacts" onClick={(e) => { e.preventDefault(); scrollToSection('contacts'); }}>Контакты</StyledLink>
+      </FlexBoxRow>
+      <FlexBoxRow jcEnd>
+        <StyledLink to="/signin">Вход</StyledLink>
+        <Button base>Заявка</Button>
+      </FlexBoxRow>
+    </FlexBoxNav>
   );
 }
