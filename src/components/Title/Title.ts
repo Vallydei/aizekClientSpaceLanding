@@ -15,4 +15,8 @@ export const Title = styled('h2', {
   font-size: ${(props) =>
     props.small ? '16px' : props.medium ? '27px' : props.bigger ? '50px' : '40px'};
   font-weight: 800;
-`;
+  @media (max-width: 960px) {
+    font-size: 31px;     
+  }
+`
+;

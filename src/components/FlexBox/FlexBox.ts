@@ -42,16 +42,7 @@ export const FlexBoxRow = styled('div', {
   gap: 20px;
 `;
 
-export const FlexBoxMain = styled(FlexBoxColumn)`
-  max-width: 1060px;
-  text-align: center;
-  margin: 1.7% 0;
-  justify-content: start;
-`;
 
-export const FlexBoxMainDiv = styled(FlexBoxRow)`
-  margin-top: 120px;
-`;
 
 export const FlexBoxForm = styled(FlexBoxColumn)`
   height: 270px;
@@ -60,7 +51,4 @@ export const FlexBoxForm = styled(FlexBoxColumn)`
   gap: 25px;
 `;
 
-export const FlexBoxPossibilitie = styled(FlexBoxColumn)`
-  align-items: start;
-`;
 

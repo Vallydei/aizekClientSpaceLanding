@@ -1,11 +1,12 @@
 import React from 'react';
-import { FlexBoxColumn, FlexBoxMain, FlexBoxRow } from '../FlexBox/FlexBox';
+import { FlexBoxRow } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
+import { FlexBoxMain, FlexBoxSection } from './mainContainerStyles';
 
 export default function CluesArticle(): JSX.Element {
   return (
-    <FlexBoxColumn>
+    <FlexBoxMain>
       <Title id='reports'>Ключевые выгоды</Title>
       <FlexBoxMain>
         <Text bigger>
@@ -15,7 +16,7 @@ export default function CluesArticle(): JSX.Element {
         </Text>
       </FlexBoxMain>
       <FlexBoxRow>
-        <FlexBoxMain>
+        <FlexBoxSection>
           {' '}
           <svg
             width="60"
@@ -97,8 +98,8 @@ export default function CluesArticle(): JSX.Element {
             Посчитайте время, которое вы сэкономите по сравнению с ручными выгрузками или старыми
             скриптами, которые постоянно надо чинить
           </Text>
-        </FlexBoxMain>
-        <FlexBoxMain>
+        </FlexBoxSection>
+        <FlexBoxSection>
           {' '}
           <svg
             width="60"
@@ -153,8 +154,8 @@ export default function CluesArticle(): JSX.Element {
             У вас постоянно появляются новые гипотезы, источники данных, а значит - требования к
             содержанию и формату отчетов
           </Text>
-        </FlexBoxMain>
-        <FlexBoxMain>
+        </FlexBoxSection>
+        <FlexBoxSection>
           {' '}
           <svg
             width="60"
@@ -208,8 +209,8 @@ export default function CluesArticle(): JSX.Element {
             Конечно, автоматические отчеты не заменят ваш опыт и вашу интуицию. Но подскажут как
             улучшить достижение KPI.
           </Text>
-        </FlexBoxMain>
+        </FlexBoxSection>
       </FlexBoxRow>{' '}
-    </FlexBoxColumn>
+    </FlexBoxMain>
   );
 }

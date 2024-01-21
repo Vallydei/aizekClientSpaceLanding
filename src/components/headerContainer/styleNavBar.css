@@ -1,0 +1,45 @@
+.flexBoxNav {
+  display: flex;
+  margin: 61px auto 0;
+  max-width: 1180px;
+  width: 100%;
+}
+
+.logoBox {
+  display: none;
+  margin: 20px;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttonBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+}
+
+.burgerBox {
+  display: none;
+  margin: 20px;
+}
+
+@media (max-width: 960px) {
+  .flexBoxNav {
+    margin: 0 auto;
+  }
+  .navContainer {
+    display: none;
+  }
+  .burgerBox {
+    display: block;
+  }
+  .logoBox {
+    display: block;
+  }
+}
