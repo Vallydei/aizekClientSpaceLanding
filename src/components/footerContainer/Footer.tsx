@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyledLink } from '../Link/Link';
-// import Carousel from './Carousel';
 import Button from '../Button/Button';
 
 import './footerStyle.css';
@@ -17,8 +16,6 @@ export default function Footer() {
           Опция “Оптимум” позволяет сохранить гибкость и экономичность, постепенно расширяя
           функционал.
         </p>
-
-        {/* <Carousel /> */}
         <SwiperComponent/>
         <div className="footerAddress" id="contacts">
           <div>
