@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyledLink } from '../Link/Link';
 import Button from '../Button/Button';
-import './footerStyle.css';
 import SwiperComponent from './SwiperComponent';
+import './footerStyle.css';
 
 export default function Footer() {
   return (
     <footer className="footerContainer">
       <div className="flexBoxFooter">
-        <h2 className='footerTitle'>Простые цены</h2>
-        <p className='footerText'>
+        <h2 className="footerTitle">Простые цены</h2>
+        <p className="footerText">
           Почти все наши клиенты выбирают опцию “Оптимум”, т.к. почти всем нужны специфические
           данные и графики. <br />
           Опция “Оптимум” позволяет сохранить гибкость и экономичность, постепенно расширяя
           функционал.
         </p>
-        <SwiperComponent/>
+        <SwiperComponent />
         <div className="footerAddress" id="contacts">
           <div>
             <svg
@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
             </ul>
           </nav>
-          <Button className='contactBtn' base type="button">
+          <Button className="contactBtn" base type="button">
             Написать нам
           </Button>
         </div>
