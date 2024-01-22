@@ -165,7 +165,7 @@ Error generating stack: `+s.message+`
 
   &::after {
     content: '';
-    background-image: url('./img/Subtract (1).png');
+    background-image: url('img/Subtract (1).png');
     position: absolute;
     top: 0;
     left: 0;
