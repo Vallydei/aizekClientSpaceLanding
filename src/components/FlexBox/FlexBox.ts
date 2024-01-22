@@ -42,13 +42,9 @@ export const FlexBoxRow = styled('div', {
   gap: 20px;
 `;
 
-
-
 export const FlexBoxForm = styled(FlexBoxColumn)`
   height: 270px;
-  background-color: rgba(253, 107, 33, 10%);
   padding: 75px 160px;
+  background-color: rgba(253, 107, 33, 10%);
   gap: 25px;
 `;
-
-
