@@ -1,7 +1,7 @@
 .flexBoxHeader {
   display: flex;
   flex-direction: column;
-  background-image: url('./img/background-top.png');
+  background-image: url('/img/background-top.png');
   background-size: 100% 815px;
   background-repeat: no-repeat;
   width: 100%;
@@ -17,7 +17,7 @@
   width: 670px;
   height: 600px;
   border-radius: 38px;
-  background-image: url('./img/main-screen-large.svg');
+  background-image: url('/img/main-screen-large.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -29,7 +29,7 @@
   height: 247px;
   top: 290px;
   right: 400px;
-  background-image: url('./img/main-screen-small.svg');
+  background-image: url('/img/main-screen-small.svg');
   background-size: contain;
 }
 
@@ -43,7 +43,7 @@
 .flexBoxHeaderDescription::before {
   content: '';
   position: absolute;
-  background-image: url('./img/tech_icon_cs-grow.png');
+  background-image: url('/img/tech_icon_cs-grow.png');
   background-repeat: no-repeat;
   background-size: contain;
   top: 0;

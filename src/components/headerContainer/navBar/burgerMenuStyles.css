@@ -43,13 +43,13 @@ button {
   right: 0;
   width: 88px;
   height: 88px;
-  background-image: url('./img/menu.svg');
+  background-image: url('/img/menu.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .burger.open {
-  background-image: url('./img/close.svg');
+  background-image: url('/img/close.svg');
 }
 
 .background {
