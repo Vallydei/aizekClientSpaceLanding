@@ -6,21 +6,40 @@ import { Input } from '../Input/Input';
 import { Textarea } from '../Textarea/Textarea';
 import Button from '../Button/Button';
 import { FormStyled } from './formStyles';
+import axios from 'axios';
+
+type FormInput = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 export default function Form() {
+  const sumbmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(e.currentTarget)) as FormInput;
+    console.log(formData);
+    try {
+      await axios.post('/api/application', formData);
+      e.currentTarget.reset();
+      document.getElementById('nav')!.scrollIntoView({ behavior: 'smooth' });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <FormStyled>
-      <FlexBoxForm id='help'>
-        <Title medium >Узнать больше и протестировать продукт</Title>
+    <FormStyled onSubmit={(e) => sumbmitHandler(e)}>
+      <FlexBoxForm id="help">
+        <Title medium>Узнать больше и протестировать продукт</Title>
         <FormText>
           Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию
         </FormText>
       </FlexBoxForm>
 
-      <Input type="text" placeholder="Имя" />
-      <Input type="email" placeholder="Email" />
-      <Textarea placeholder="Ваш вопрос" />
-      <Button>Отправить запрос</Button>
+      <Input name="name" type="text" placeholder="Имя" />
+      <Input name="email" type="email" placeholder="Email" />
+      <Textarea name="message" placeholder="Ваш вопрос" />
+      <Button type="submit">Отправить запрос</Button>
     </FormStyled>
   );
 }

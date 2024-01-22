@@ -1,23 +1,24 @@
 import React from 'react';
-import { FlexBoxColumn, FlexBoxMain, FlexBoxRow } from '../FlexBox/FlexBox';
+import { FlexBoxRow } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
 
 export default function CluesArticle(): JSX.Element {
   return (
-    <FlexBoxColumn>
-      <Title id='reports'>Ключевые выгоды</Title>
-      <FlexBoxMain>
+    <div className="flexBoxMain" id="reports">
+      <Title>Ключевые выгоды</Title>
+      <div className="flexBoxMain">
         <Text bigger>
           Вместо того, чтобы часами копировать и вставлять, приводить к одному формату, проверять
           данные на целостность, ваша команда наконец-то займется работой, которую пока не могут
           выполнять роботы. А вы повысите ROI на ФОТ.
         </Text>
-      </FlexBoxMain>
-      <FlexBoxRow>
-        <FlexBoxMain>
+      </div>
+      <FlexBoxRow className="sectionBox">
+        <section className="flexBoxSection">
           {' '}
           <svg
+            className="iconSection"
             width="60"
             height="60"
             viewBox="0 0 60 60"
@@ -92,15 +93,21 @@ export default function CluesArticle(): JSX.Element {
               </clipPath>
             </defs>
           </svg>
-          <Title small>В 5 раз быстрее сбор отчетов</Title>
-          <Text>
-            Посчитайте время, которое вы сэкономите по сравнению с ручными выгрузками или старыми
-            скриптами, которые постоянно надо чинить
-          </Text>
-        </FlexBoxMain>
-        <FlexBoxMain>
+          <div>
+            {' '}
+            <Title className="sectionTitle" small>
+              В 5 раз быстрее сбор отчетов
+            </Title>
+            <p>
+              Посчитайте время, которое вы сэкономите по сравнению с ручными выгрузками или старыми
+              скриптами, которые постоянно надо чинить
+            </p>
+          </div>
+        </section>
+        <section className="flexBoxSection">
           {' '}
           <svg
+            className="iconSection"
             width="60"
             height="60"
             viewBox="0 0 60 60"
@@ -148,15 +155,21 @@ export default function CluesArticle(): JSX.Element {
               fill="#ef2a82"
             />
           </svg>
-          <Title small>Натройка под вашу задачу</Title>
-          <Text>
-            У вас постоянно появляются новые гипотезы, источники данных, а значит - требования к
-            содержанию и формату отчетов
-          </Text>
-        </FlexBoxMain>
-        <FlexBoxMain>
+          <div>
+            {' '}
+            <Title className="sectionTitle" small>
+              Натройка под вашу задачу
+            </Title>
+            <p>
+              У вас постоянно появляются новые гипотезы, источники данных, а значит - требования к
+              содержанию и формату отчетов
+            </p>
+          </div>
+        </section>
+        <section className="flexBoxSection">
           {' '}
           <svg
+            className="iconSection"
             width="60"
             height="60"
             viewBox="0 0 60 60"
@@ -203,13 +216,18 @@ export default function CluesArticle(): JSX.Element {
               </clipPath>
             </defs>
           </svg>
-          <Title small>Данные для умных решений</Title>
-          <Text>
-            Конечно, автоматические отчеты не заменят ваш опыт и вашу интуицию. Но подскажут как
-            улучшить достижение KPI.
-          </Text>
-        </FlexBoxMain>
+          <div>
+            {' '}
+            <Title className="sectionTitle" small>
+              Данные для умных решений
+            </Title>
+            <p>
+              Конечно, автоматические отчеты не заменят ваш опыт и вашу интуицию. Но подскажут как
+              улучшить достижение KPI.
+            </p>
+          </div>
+        </section>
       </FlexBoxRow>{' '}
-    </FlexBoxColumn>
+    </div>
   );
 }

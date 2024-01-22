@@ -1,0 +1,93 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footerSwiper {
+  position: relative;
+  padding-bottom: 90px;
+}
+
+.footerSwiper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #8794ba;
+}
+.swiperComponent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 33.3%;
+  height: 440px;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #0f1f4b;
+  color: #ffffff;
+  border-radius: 38px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.swiperComponent:hover {
+  background-color: #ffffff;
+  color: #0f1f4b;
+}
+
+.swiperComponent::after {
+  content: '';
+  width: 50%;
+  height: 1px;
+  background-color: #d3d9e9;
+  top: 170px;
+  position: absolute;
+}
+
+.buttonPrices {
+  width: 206px;
+  height: 50px;
+  background-color: #0f1f4b;
+  color: #fff;
+  border-radius: 68px;
+  border: none;
+  font-size: 16px;
+  border: 1px solid #2a407c;
+  transition: background-color 0.3s;
+}
+
+.swiperComponent:hover .buttonPrices {
+  cursor: pointer;
+  background-color: #ef2a82;
+  border: none;
+}
+
+@media (max-width: 960px) {
+  .buttonPrices {
+    cursor: pointer;
+    background-color: #ef2a82;
+    border: none;
+  }
+  .swiperComponent {
+    background-color: #ffffff;
+    color: #0f1f4b;
+  }
+}

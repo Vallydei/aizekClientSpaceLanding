@@ -16,12 +16,15 @@ const Button = styled('button', {
   color: #fff;
   border-radius: 68px;
   border: none;
-  z-index: 1;
   &:hover {
     cursor: pointer;
     background-color: #F17BB0; 
   }
 
+  @media (max-width:960px) {
+    width: 100%;
+  }
 `;
+
 
 export default Button;

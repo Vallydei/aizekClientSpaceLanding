@@ -8,8 +8,8 @@ export const FormStyled = styled.form`
   gap: 25px;
   text-align: center;
   margin: 73px auto 0;
-
   position: relative;
+
   &::after {
     content: '';
     background-image: url('./img/Subtract (1).png');
@@ -21,4 +21,9 @@ export const FormStyled = styled.form`
     height: 150%;
     z-index: -1;
   }
+
+  @media (max-width: 960px) {
+    display: none;
+  }
+  
 `;

@@ -1,0 +1,142 @@
+.flexBoxHeader {
+  display: flex;
+  flex-direction: column;
+  background-image: url('./img/background-top.png');
+  background-size: 100% 815px;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 815px;
+  position: relative;
+}
+
+.flexBoxHeader::before {
+  content: '';
+  position: absolute;
+  top: 164px;
+  right: 0;
+  width: 670px;
+  height: 600px;
+  border-radius: 38px;
+  background-image: url('./img/main-screen-large.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flexBoxHeader::after {
+  content: '';
+  position: absolute;
+  width: 361px;
+  height: 247px;
+  top: 290px;
+  right: 400px;
+  background-image: url('./img/main-screen-small.svg');
+  background-size: contain;
+}
+
+.flexBoxHeaderDescription {
+  width: 100%;
+  max-width: 1180px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.flexBoxHeaderDescription::before {
+  content: '';
+  position: absolute;
+  background-image: url('./img/tech_icon_cs-grow.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+  z-index: -1;
+}
+
+.mainImg {
+  display: none;
+}
+
+.boxHeader {
+  display: flex;
+  flex-direction: column;
+  max-width: 510px;
+  height: 100%;
+  padding-top: 7%;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+.boxHeader2 {
+  position: relative;
+}
+.analyticsImg {
+  max-width: 690px;
+  max-height: 550px;
+  border-radius: 38px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.headerText {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #8794ba;
+}
+
+@media (max-width: 1300px) {
+  .flexBoxHeader::before {
+    width: 500px;
+  }
+  .flexBoxHeader::after {
+    right: 200px;
+  }
+  .boxHeader {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .flexBoxHeader::before {
+    background-image: none;
+  }
+  .flexBoxHeader::after {
+    display: none;
+
+  }
+  .flexBoxHeader {
+    background-size: cover;
+    padding: 0 0 150px;
+    font-size: 18px;
+  }
+
+  .boxHeaderBackground {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+    height: 96.5%;
+  }
+
+  .boxHeaderBackground::before {
+    background-image: none;
+  }
+
+  .boxHeaderBackground::after {
+    background-image: none;
+  }
+  .boxHeaderBackground2 {
+    height: 1425px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  }
+
+  .mainImg {
+    display: block;
+    width: 100%;
+  }
+
+  .boxHeader {
+    width: 100%;
+    max-width: unset;
+    padding: 0 20px;
+    gap: 50px;
+  }
+
+}

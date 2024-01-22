@@ -1,39 +1,28 @@
 import React from 'react';
-import {
-  AnalyticsImg,
-  BoxHeader,
-  DiagramImg,
-  FlexBoxHeader,
-  BoxHeaderBackground,
-  BoxHeaderBackground2,
-  FlexBoxHeaderDescription,
-} from './headerStyles';
 import Button from '../Button/Button';
-import { Text } from '../Text/Text';
 import { Title } from '../Title/Title';
-import NavBar from './NavBar';
+import OptionNavbar from './navBar/OptionalNavBar';
+import './styleHeader.css';
 
-export default function Header() {
+export default function Header(): JSX.Element {
   return (
-    <FlexBoxHeader jcStart>
-      <BoxHeaderBackground2 />
-      <BoxHeaderBackground />
-      <NavBar />
-      <FlexBoxHeaderDescription>
-        <BoxHeader>
+    <div className="flexBoxHeader">
+      <OptionNavbar />
+      <div className="flexBoxHeaderDescription">
+        <img className="mainImg" src="./img/main.svg" />
+        <div className="boxHeader">
           <Title mainColor bigger>
             Стройная аналитика для маркетинга
           </Title>
-          <Text>
+          <p className="headerText">
             Быстрая настройка для стандартных задач и данных, кастомная доработка для продвинутых и
             продуктивных
-          </Text>
-          <Button medium>Получить доступ</Button>
-        </BoxHeader>
-
-        <AnalyticsImg src="./img/main-screen.png" alt="пример аналитики" />
-        <DiagramImg src="./img/audience.png" alt="диаграмма" />
-      </FlexBoxHeaderDescription>
-    </FlexBoxHeader>
+          </p>
+          <Button medium className="accessBtn">
+            Получить доступ
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 }
