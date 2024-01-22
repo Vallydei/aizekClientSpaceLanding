@@ -132,8 +132,8 @@ Error generating stack: `+s.message+`
   gap: 20px;
 `,$9=Mn(R0)`
   height: 270px;
-  background-color: rgba(253, 107, 33, 10%);
   padding: 75px 160px;
+  background-color: rgba(253, 107, 33, 10%);
   gap: 25px;
 `,qd=An.input`
   width: 100%;
