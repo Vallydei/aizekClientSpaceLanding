@@ -1,59 +1,58 @@
 import React from 'react';
-import { FlexBoxColumn } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { Text } from '../Text/Text';
-import { ContImg, ContText, FlexBoxMainDiv, ImgMain } from './mainContainerStyles';
+import { FlexBoxColumn } from '../FlexBox/FlexBox';
+import './mainContainerStyle.css'
 
 export default function PossibilitiesArticle(): JSX.Element {
   return (
     <FlexBoxColumn>
-      <FlexBoxMainDiv>
-        <ContText>
+      <div className="flexBoxMainDiv">
+        <div className="contText">
           <Title>
             Ваши данные,
             <br /> ваши настройки
           </Title>
-          <Text bigger>
-            Получите быстрый доступ к ценым данным и нужную визуализацию для успешного управления
+          <Text className="bigger">
+            Получите быстрый доступ к ценным данным и нужную визуализацию для успешного управления
             маркетингом и развития бизнеса. Ваши данные всегда останутся только вашими, благодаря
             многоуровневой системе защиты доступа (вплоть до полной локализации хранения данных).
           </Text>
-        </ContText>
-        <ContImg>
-          <ImgMain src="./img/stats-1.svg" alt="диаграмма 2" />
-        </ContImg>
-      </FlexBoxMainDiv>
+        </div>
+        <div className="contImg">
+          <img className='imgMain' src="./img/stats-1.svg" alt="диаграмма 2" />
+        </div>
+      </div>
 
-      <FlexBoxMainDiv>
-        <ContImg>
-          <ImgMain src="./img/stats-2.svg" alt="диаграмма 3" />
-        </ContImg>
-
-        <ContText>
+      <div className="flexBoxMainDiv">
+        <div className="contImg">
+          <img className='imgMain' src="./img/stats-2.svg" alt="диаграмма 3" />
+        </div>
+        <div className="contText contText_middle">
           <Title>
             План-факт на автомате
             <br /> в нужных разрезах и ярких графиках
           </Title>
-          <Text bigger>
+          <Text className="bigger">
             Сравнивайте фактические результаты с запланированными, быстро проверяйте гипотезы и
             находите новые источники роста для вашего бренда.
           </Text>
-        </ContText>
-      </FlexBoxMainDiv>
+        </div>
+      </div>
 
-      <FlexBoxMainDiv>
-        <ContText>
+      <div className="flexBoxMainDiv">
+        <div className="contText">
           <Title>Инсайты</Title>
-          <Text bigger>
+          <Text className="bigger">
             Стройте аналитику, чтобы лучше понимать характеристики и поведение ваших целевых
             аудиторий, позиции бренда в сердцах, на полках и в кошельках с учетом конкурентного
             окружения и трендов.
           </Text>
-        </ContText>
-        <ContImg>
-          <ImgMain src="img/stats-3.svg" alt=" " />
-        </ContImg>
-      </FlexBoxMainDiv>
+        </div>
+        <div className="contImg">
+          <img className='imgMain' src="img/stats-3.svg" alt=" " />
+        </div>
+      </div>
     </FlexBoxColumn>
   );
 }

@@ -1,37 +1,27 @@
 import React from 'react';
-import {
-  BoxFooterBackground,
-  BoxFooterBackground2,
-  FlexBoxFooter,
-  FooterAddress,
-  FooterContainer,
-  FooterList,
-} from './footerStyles';
 import { Title } from '../Title/Title';
-import { Text } from '../Text/Text';
 import { StyledLink } from '../Link/Link';
-import Carousel from './Carousel';
-import { FooterCarousel } from './carousel';
+// import Carousel from './Carousel';
 import Button from '../Button/Button';
+
+import './footerStyle.css';
+import SwiperComponent from './SwiperComponent';
 
 export default function Footer() {
   return (
-    <FooterContainer>
-      <BoxFooterBackground />
-      <BoxFooterBackground2 />
-      <FlexBoxFooter>
-        <Title mainColor>Простое ценообразование</Title>
-        <Text bigger>
+    <footer className="footerContainer">
+      <div className="flexBoxFooter">
+        <h2 className='footerTitle'>Простые цены</h2>
+        <p className='footerText'>
           Почти все наши клиенты выбирают опцию “Оптимум”, т.к. почти всем нужны специфические
           данные и графики. <br />
           Опция “Оптимум” позволяет сохранить гибкость и экономичность, постепенно расширяя
           функционал.
-        </Text>
+        </p>
 
-        <FooterCarousel>
-          <Carousel />
-        </FooterCarousel>
-        <FooterAddress id="contacts">
+        {/* <Carousel /> */}
+        <SwiperComponent/>
+        <div className="footerAddress" id="contacts">
           <div>
             <svg
               width="139"
@@ -70,7 +60,7 @@ export default function Footer() {
             </svg>
           </div>
           <nav>
-            <FooterList>
+            <ul className="footerList">
               <li>
                 <StyledLink to="/" small>
                   О продукте
@@ -91,13 +81,13 @@ export default function Footer() {
                   Коннекторы
                 </StyledLink>
               </li>
-            </FooterList>
+            </ul>
           </nav>
-          <Button base type="button">
+          <Button className='contactBtn' base type="button">
             Написать нам
           </Button>
-        </FooterAddress>
-      </FlexBoxFooter>
-    </FooterContainer>
+        </div>
+      </div>
+    </footer>
   );
 }

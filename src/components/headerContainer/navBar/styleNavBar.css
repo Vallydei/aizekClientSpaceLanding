@@ -5,11 +5,6 @@
   width: 100%;
 }
 
-.logoBox {
-  display: none;
-  margin: 20px;
-}
-
 .navContainer {
   display: flex;
   align-items: center;
@@ -27,19 +22,4 @@
 .burgerBox {
   display: none;
   margin: 20px;
-}
-
-@media (max-width: 960px) {
-  .flexBoxNav {
-    margin: 0 auto;
-  }
-  .navContainer {
-    display: none;
-  }
-  .burgerBox {
-    display: block;
-  }
-  .logoBox {
-    display: block;
-  }
 }
