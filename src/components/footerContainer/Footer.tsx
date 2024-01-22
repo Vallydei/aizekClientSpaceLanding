@@ -1,5 +1,4 @@
 import React from 'react';
-import { Title } from '../Title/Title';
 import { StyledLink } from '../Link/Link';
 // import Carousel from './Carousel';
 import Button from '../Button/Button';
