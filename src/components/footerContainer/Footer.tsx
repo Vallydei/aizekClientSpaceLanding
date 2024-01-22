@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyledLink } from '../Link/Link';
 import Button from '../Button/Button';
-
 import './footerStyle.css';
 import SwiperComponent from './SwiperComponent';
 

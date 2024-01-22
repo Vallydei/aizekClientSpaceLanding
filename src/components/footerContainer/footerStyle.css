@@ -2,8 +2,8 @@
   background-image: url('/img/background-bottom.png');
   background-size: 100% 1100px;
   background-repeat: no-repeat;
-  width: 100%;
   min-height: 1030px;
+  width: 100%;
 }
 
 .flexBoxFooter {
@@ -68,7 +68,6 @@
     display: none;
   }
 
- 
   .footerAddress {
     margin-bottom: 20px;
   }
