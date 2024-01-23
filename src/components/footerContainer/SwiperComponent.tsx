@@ -4,6 +4,12 @@ import 'swiper/css';
 import './swiperStyles.css';
 import { Text } from '../Text/Text';
 
+const swiperProps = [
+  { id: 1, tarif: 'Стандарт', features: '(из коробки)', price: '₽15 000', period: 'в месяц' },
+  { id: 2, tarif: 'Оптимум', features: '+1 коннектор, отчет', price: '₽35 000', period: 'в месяц' },
+  { id: 3, tarif: 'Премиум', features: 'настройка под вас', price: '?', period: 'все обсуждается' },
+];
+
 export default function SwiperComponent() {
   return (
     <>
@@ -29,27 +35,13 @@ export default function SwiperComponent() {
           modifier: 0,
         }}
       >
-        <SwiperSlide className='swiperComponent'>
-          <h3>Стандарт</h3>
-          <Text bigger>(из коробки)</Text> <h2>₽15 000</h2>
-          <Text>в месяц</Text> <button className="buttonPrices">Запрос</button>{' '}
-        </SwiperSlide>
-        <SwiperSlide className='swiperComponent'>
-          {' '}
-          <h3>Оптимум</h3>
-          <Text bigger>+1 коннектор, отчет</Text>
-          <h2>₽35 000</h2>
-          <Text>в месяц</Text>
-          <button className="buttonPrices">Запрос</button>
-        </SwiperSlide>
-        <SwiperSlide className='swiperComponent'>
-          {' '}
-          <h3>Премиум</h3>
-          <Text bigger>настройка под вас</Text>
-          <h2>?</h2>
-          <Text>все обсуждается</Text>
-          <button className="buttonPrices">Запрос</button>
-        </SwiperSlide>
+        {swiperProps.map((slide) => (
+          <SwiperSlide className="swiperComponent" key={slide.id}>
+            <h3>{slide.tarif}</h3>
+            <Text bigger>{slide.features}</Text> <h2>{slide.price}</h2>
+            <Text>{slide.period}</Text> <button className="buttonPrices">Запрос</button>{' '}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

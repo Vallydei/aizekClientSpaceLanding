@@ -71,7 +71,7 @@
 
   .sectionBox {
     flex-direction: column;
-    gap: 50px
+    gap: 50px;
   }
 
   .flexBoxSection {
@@ -79,12 +79,11 @@
     font-size: 14px;
     line-height: 1.2;
     text-align: start;
-    gap: 30px
+    gap: 30px;
   }
 
   .iconSection {
     width: 100px;
-
   }
   .sectionTitle {
     font-size: 16px;
@@ -93,24 +92,23 @@
 
   .flexBoxMainDiv {
     flex-direction: column;
-    gap: 40px
+    gap: 40px;
   }
 
   .contImg {
-    width: 95%;
-
+    width: 100%;
   }
 
   .imgMain:hover {
     transition: unset;
-    transform: unset
+    transform: unset;
   }
 
-  .contText_middle{
+  .contText_middle {
     order: 1;
   }
 
   .contImg {
-    order: 2; 
+    order: 2;
   }
 }

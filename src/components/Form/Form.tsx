@@ -2,8 +2,6 @@ import React from 'react';
 import { FlexBoxForm } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { FormText } from '../Text/Text';
-import { Input } from '../Input/Input';
-import { Textarea } from '../Textarea/Textarea';
 import Button from '../Button/Button';
 import { FormStyled } from './formStyles';
 import axios from 'axios';
@@ -36,9 +34,9 @@ export default function Form() {
         </FormText>
       </FlexBoxForm>
 
-      <Input name="name" type="text" placeholder="Имя" />
-      <Input name="email" type="email" placeholder="Email" />
-      <Textarea name="message" placeholder="Ваш вопрос" />
+      <input className='formInput' name="name" type="text" placeholder="Имя" />
+      <input className='formInput' name="email" type="email" placeholder="Email" />
+      <textarea className='formTextarea' name="message" placeholder="Ваш вопрос" />
       <Button type="submit">Отправить запрос</Button>
     </FormStyled>
   );

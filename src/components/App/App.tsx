@@ -1,6 +1,6 @@
 import React from 'react';
 import GlobalStyles from './global';
-import Header from '../headerContainer/HeaderDescription';
+import Header from '../headerContainer/Header';
 import Footer from '../footerContainer/Footer';
 import Form from '../Form/Form';
 import PossibilitiesArticle from '../mainContainer/PossibilitiesArticle';
