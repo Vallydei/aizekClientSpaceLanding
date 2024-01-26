@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledLink } from '../Link/Link';
 import Button from '../Button/Button';
 import SwiperComponent from './SwiperComponent';
-import './footerStyle.css';
+import './footerStyles.css';
 
 const footerProps = {
   title: 'Простые цены',
@@ -17,7 +17,7 @@ const footerNav = [
 ];
 export default function Footer() {
   return (
-    <footer className="footerContainer">
+    <footer className="footerContainer" id="prices">
       <div className="flexBoxFooter">
         <h2 className="footerTitle">{footerProps.title}</h2>
         <p className="footerText">{footerProps.text}</p>

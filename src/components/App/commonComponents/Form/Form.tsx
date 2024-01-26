@@ -1,5 +1,4 @@
 import React from 'react';
-import { FlexBoxForm } from '../FlexBox/FlexBox';
 import { Title } from '../Title/Title';
 import { FormText } from '../Text/Text';
 import Button from '../Button/Button';
@@ -27,16 +26,16 @@ export default function Form() {
   };
   return (
     <FormStyled onSubmit={(e) => sumbmitHandler(e)}>
-      <FlexBoxForm id="help">
+      <div id="z">
         <Title medium>Узнать больше и протестировать продукт</Title>
         <FormText>
           Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию
         </FormText>
-      </FlexBoxForm>
+      </div>
 
-      <input className='formInput' name="name" type="text" placeholder="Имя" />
-      <input className='formInput' name="email" type="email" placeholder="Email" />
-      <textarea className='formTextarea' name="message" placeholder="Ваш вопрос" />
+      <input className="formInput" name="name" type="text" placeholder="Имя" />
+      <input className="formInput" name="email" type="email" placeholder="Email" />
+      <textarea className="formTextarea" name="message" placeholder="Ваш вопрос" />
       <Button type="submit">Отправить запрос</Button>
     </FormStyled>
   );

@@ -1,21 +1,22 @@
 import React from 'react';
 import GlobalStyles from './global';
-import Header from '../headerContainer/Header';
-import Footer from '../footerContainer/Footer';
-import Form from '../Form/Form';
-import PossibilitiesArticle from '../mainContainer/PossibilitiesArticle';
-import CluesArticle from '../mainContainer/CluesArticle';
+import Footer from './commonComponents/footerContainer/Footer';
+import { Route, Routes } from 'react-router-dom';
+import MainPage from '../Pages/mainContainer/MainPage';
+import SignIn from '../Pages/signIn/SignIn';
+import SignUp from '../Pages/signUp/SignUp';
+import OptionNavbar from './commonComponents/headerContainer/navBar/OptionalNavBar';
 
 function App(): JSX.Element {
   return (
     <>
       <GlobalStyles />
-      <Header />
-      <main className='mainContainer'>
-        <CluesArticle />
-        <PossibilitiesArticle />
-        <Form />
-      </main>
+      <OptionNavbar />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/auth" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
       <Footer />
     </>
   );

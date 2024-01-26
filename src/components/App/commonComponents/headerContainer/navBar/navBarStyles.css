@@ -1,11 +1,22 @@
 .flexBoxNav {
   display: flex;
-  margin: 61px auto 0;
-  max-width: 1180px;
+  margin: 0 auto;
   width: 100%;
+  background-color: #172755;
+  position: relative;
+
 }
 
 .navContainer {
+  max-width: 1180px;
+  width: 100%;
+  display: flex;
+  margin: 20px auto;
+  z-index: 4;
+  align-items: center;
+}
+
+.navList {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,7 +43,3 @@
   gap: 20px;
 }
 
-.burgerBox {
-  display: none;
-  margin: 20px;
-}

@@ -1,27 +1,42 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import './burgerMenuStyles.css';
 import Logo from '../Logo';
+import { Section } from './OptionalNavBar';
 
 const sections = [
   { id: 'reports', label: 'Отчеты' },
   { id: 'data', label: 'Данные' },
-  { id: 'help', label: 'Помощь' },
+  { id: 'prices', label: 'Цены' },
   { id: 'contacts', label: 'Контакты' },
 ];
+// type BurgerMenuProps = {
+//   sections: Section[];
+//   onClick: (sectionId: string) => Promise<void>;
+// };
 
 export default function BurgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const isOpen = isMenuOpen ? 'open' : '';
 
-  const onClick = (sectionId: string) => {
+  const onClick = async (sectionId: string) => {
     toggleMenu();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+
+    try {
+      if (location.pathname !== '/') {
+        await navigate('/');
+      }
+
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (error) {
+      console.error('Navigation failed:', error);
     }
   };
 
@@ -29,7 +44,9 @@ export default function BurgerMenu() {
     <div className="navBurger">
       <div className="logoBox">
         <Logo />
-        <Link className='styledLink' to="/signin">Вход</Link>
+        <Link className="styledLink" to="/auth">
+          Вход
+        </Link>
       </div>
 
       <button className={`burger ${isOpen}`} onClick={toggleMenu}></button>

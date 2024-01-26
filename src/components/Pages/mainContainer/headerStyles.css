@@ -1,9 +1,8 @@
 .flexBoxHeader {
   display: flex;
   flex-direction: column;
-  background-image: url('/img/background-top.png');
+  background: url('/img/background-top.png') no-repeat;
   background-size: 100% 815px;
-  background-repeat: no-repeat;
   width: 100%;
   min-height: 815px;
   position: relative;
@@ -12,14 +11,14 @@
 .flexBoxHeader::before {
   content: '';
   position: absolute;
-  top: 164px;
+  top: 40px;
   right: 0;
   width: 670px;
   height: 600px;
   border-radius: 38px;
-  background-image: url('/img/main-screen-large.svg');
-  background-repeat: no-repeat;
+  background: url('/img/main-screen-large.svg') no-repeat;
   background-size: contain;
+  z-index: 3;
 }
 
 .flexBoxHeader::after {
@@ -27,10 +26,11 @@
   position: absolute;
   width: 361px;
   height: 247px;
-  top: 290px;
+  top: 180px;
   right: 400px;
-  background-image: url('/img/main-screen-small.svg');
+  background: url('/img/main-screen-small.svg') no-repeat;
   background-size: contain;
+  z-index: 3;
 }
 
 .flexBoxHeaderDescription {
@@ -38,23 +38,33 @@
   max-width: 1180px;
   margin: 30px auto;
   padding: 0 20px;
+  z-index: 2;
 }
 
 .flexBoxHeaderDescription::before {
   content: '';
   position: absolute;
-  background-image: url('/img/tech_icon_cs-grow.png');
-  background-repeat: no-repeat;
+  background: url('/img/tech_icon_cs-grow.png') no-repeat;
   background-size: contain;
-  top: 0;
+  top: -130px;
   left: 0;
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 600px;
   z-index: -1;
 }
 
-.mainImg {
-  display: none;
+.flexBoxHeaderDescription::after {
+  content: '';
+  position: absolute;
+  background-image: url('/img/Subtract.png');
+  background-repeat: no-repeat;
+  background-size: 1500px 1500px;
+  top: -180px;
+  right: -350px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 85%);
+  width: 70%;
+  height: 130%;
+  z-index: -2;
 }
 
 .boxHeader {
@@ -65,16 +75,7 @@
   padding-top: 7%;
   gap: 30px;
   justify-content: flex-start;
-}
-
-.boxHeader2 {
-  position: relative;
-}
-.analyticsImg {
-  max-width: 690px;
-  max-height: 550px;
-  border-radius: 38px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 .headerText {
@@ -83,12 +84,18 @@
   color: #8794ba;
 }
 
+.mainImg {
+  display: none;
+}
 @media (max-width: 1300px) {
   .flexBoxHeader::before {
     width: 500px;
   }
   .flexBoxHeader::after {
     right: 200px;
+  }
+  .flexBoxHeaderDescription::after {
+    display: none;
   }
   .boxHeader {
     padding-left: 20px;
@@ -97,37 +104,19 @@
 }
 
 @media (max-width: 960px) {
-  .flexBoxHeader::before {
-    background-image: none;
-  }
+  .flexBoxHeader::before,
   .flexBoxHeader::after {
     display: none;
-
   }
+
   .flexBoxHeader {
     background-size: cover;
-    padding: 0 0 150px;
+    padding: 0 0 130px;
     font-size: 18px;
   }
 
-  .boxHeaderBackground {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-    height: 96.5%;
-  }
-
-  .boxHeaderBackground::before {
-    background-image: none;
-  }
-
-  .boxHeaderBackground::after {
-    background-image: none;
-  }
-  .boxHeaderBackground2 {
-    height: 1425px;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-  }
-
   .mainImg {
+    padding-top: 80px;
     display: block;
     width: 100%;
   }
@@ -136,7 +125,6 @@
     width: 100%;
     max-width: unset;
     padding: 0 20px;
-    gap: 50px;
+    gap: 20px;
   }
-
 }

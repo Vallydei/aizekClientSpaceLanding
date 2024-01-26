@@ -1,8 +1,5 @@
 import React from 'react';
-
-import { Title } from '../Title/Title';
-import { Text } from '../Text/Text';
-import { FlexBoxRow } from '../FlexBox/FlexBox';
+import { Title } from '../../App/commonComponents/Title/Title';
 
 const articleProps = {
   title: 'Ключевые выгоды',
@@ -33,12 +30,12 @@ const articleContent = [
 
 export default function CluesArticle(): JSX.Element {
   return (
-    <div className="flexBoxMain" id="reports">
+    <div className="flexBoxContainer">
       <Title>{articleProps.title}</Title>
-      <div className="flexBoxMain">
-        <Text bigger>{articleProps.articleDescription}</Text>
+      <div className="flexBoxTextContainer">
+        <p>{articleProps.articleDescription}</p>
       </div>
-      <FlexBoxRow className="sectionBox">
+      <div className="boxSection">
         {articleContent.map((clue) => (
           <div className="flexBoxSection" key={clue.id}>
             <svg
@@ -52,14 +49,12 @@ export default function CluesArticle(): JSX.Element {
               <use href={clue.hrefSvg}></use>
             </svg>
             <div>
-              <Title className="sectionTitle" small>
-                {clue.title}
-              </Title>
+              <h3 className="sectionTitle">{clue.title}</h3>
               <p>{clue.text}</p>
             </div>
           </div>
         ))}
-      </FlexBoxRow>
+      </div>
     </div>
   );
 }

@@ -4,8 +4,9 @@ export default function Logo(): JSX.Element {
   return (
     <>
       <svg
-        width="180"
-        height="40"
+      className='logoTop'
+        width="280"
+        height="60"
         viewBox="0 0 180 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
