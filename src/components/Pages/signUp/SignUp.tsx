@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormStyled } from '../../App/commonComponents/Form/formStyles';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { Title } from '../../App/commonComponents/Title/Title';
@@ -26,8 +25,8 @@ export default function SignIn() {
     }
   };
   return (
-    <FormStyled onSubmit={(e) => sumbmitHandler(e)}>
-      <div id="z">
+    <form className="formStyled" onSubmit={(e) => sumbmitHandler(e)}>
+      <div className="formBackground" id="z">
         <Title medium>Зарегистрируйтесь и получите доступ</Title>
         <FormText>
           Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию
@@ -48,9 +47,12 @@ export default function SignIn() {
         name="message"
         placeholder="Комментарий в свободной форме"
       />
-      <div><Button type="submit">Зарегистрироваться</Button>
-    <span>Есть логин? <Link to='/auth'>Вход в систему</Link></span></div>
-      
-    </FormStyled>
+      <div>
+        <Button type="submit">Зарегистрироваться</Button>
+        <span>
+          Есть логин? <Link to="/auth">Вход в систему</Link>
+        </span>
+      </div>
+    </form>
   );
 }

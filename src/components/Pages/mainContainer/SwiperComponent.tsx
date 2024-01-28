@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import './swiperStyles.css';
-import { Text } from '../Text/Text';
+import { Text } from '../../App/commonComponents/Text/Text';
 
 const swiperProps = [
   { id: 1, tarif: 'Стандарт', features: '(из коробки)', price: '₽15 000', period: 'в месяц' },
@@ -14,7 +14,7 @@ export default function SwiperComponent() {
   return (
     <>
       <Swiper
-        className="footerSwiper"
+        className="pricesSwiper"
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}

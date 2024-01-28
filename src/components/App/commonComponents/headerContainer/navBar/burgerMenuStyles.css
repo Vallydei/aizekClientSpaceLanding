@@ -1,26 +1,38 @@
-.navBurger {
+.navMobContainer {
   width: 100%;
-  height: 88px;
+  height: 10vh;
   background-color: rgb(23, 39, 85);
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   position: fixed;
   z-index: 3;
+  top: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logoBox {
-  width: 80%;
-  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 20px;
+ 
 }
 
+.logoTop {
+  width: 200px;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
 .styledLink {
   text-decoration: none;
   color: #ffffff;
-  padding: 10px 15px;
   cursor: pointer;
+  align-content: end;
 }
 
 button {
@@ -30,7 +42,10 @@ button {
   outline: none;
 }
 
-.burger,
+.burger {
+  width: 100%;
+  background-color: rgb(23, 39, 85);
+}
 .menu {
   width: 100%;
   position: fixed;
@@ -42,8 +57,8 @@ button {
   z-index: 4;
   top: 0;
   right: 0;
-  width: 88px;
-  height: 88px;
+  width: 60px;
+  height: 60px;
   background-image: url('/img/menu.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -60,7 +75,7 @@ button {
   right: 44px;
   aspect-ratio: 1 / 1;
   translate: 50% -50%;
-  height: 88px;
+  /* height: 88px; */
   background: #07030a;
   border-radius: 50%;
   opacity: 0;
@@ -68,7 +83,7 @@ button {
 }
 
 .background.open {
-  height: 300vh;
+  height: 100vh;
   opacity: 0.85;
 }
 

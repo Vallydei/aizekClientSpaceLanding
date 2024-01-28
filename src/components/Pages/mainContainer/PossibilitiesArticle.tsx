@@ -26,9 +26,9 @@ const possibilitieProps = [
 
 export default function PossibilitiesArticle(): JSX.Element {
   return (
-    <div id="reports">
+    <div className="reportsContainer" id="reports">
       {possibilitieProps.map((possibilitie, index) => (
-        <div className="flexBoxMainDiv">
+        <div className="flexBoxReports">
           <div
             style={{ order: index === 1 ? 1 : 'auto' }}
             key={possibilitie.id}

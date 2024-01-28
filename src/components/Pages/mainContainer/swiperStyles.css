@@ -20,12 +20,12 @@
   object-fit: cover;
 }
 
-.footerSwiper {
+.pricesSwiper {
   position: relative;
   padding-bottom: 90px;
 }
 
-.footerSwiper::after {
+.pricesSwiper::after {
   content: '';
   position: absolute;
   left: 0;
@@ -85,6 +85,9 @@
   .swiper {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .pricesSwiper::after {
+    background-color: #2a407c;
   }
 }
 

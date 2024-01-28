@@ -1,0 +1,50 @@
+.pricesContainer {
+  background: url('/img/background-bottom.png') no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 80px;
+
+}
+
+.flexBoxPrices {
+  display: flex;
+  flex-direction: column;
+  max-width: 1180px;
+  gap: 30px;
+  margin: 0 auto;
+  padding-top: 200px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #8794ba;
+}
+
+.pricesTitle {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.pricesText {
+  padding: 0 120px;
+}
+
+@media (max-width: 1300px) {
+  .pricesTitle {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 960px) {
+  .flexBoxPrices {
+    padding-top: 260px;
+    align-items: flex-start;
+    font-size: 16px;
+    text-align: start;
+  }
+
+  .pricesText {
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,107 @@
+.formStyled {
+  max-width: 990px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 24px;
+}
+
+.formBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(253, 107, 33, 0.1);
+  height: 270px;
+  padding: 0 160px;
+  gap: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.formBackground::after {
+  content: '';
+  background-image: url('img/Subtract.png');
+  position: absolute;
+  background-size: 100% 900px;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 340%;
+  z-index: -1;
+}
+
+.formBackgroundSignin {
+  text-align: start;
+}
+
+.formTitle {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.formText {
+  line-height: 1.5;
+  font-weight: lighter;
+}
+
+.formInput {
+  width: 100%;
+  height: 59px;
+  background-color: #f2f2f2;
+  border: #000 solid 1px;
+  border-radius: 10px;
+  padding: 15px 50px;
+  color: #000;
+  font-size: 24px;
+}
+
+.formTextarea {
+  width: 100%;
+  height: 139px;
+  background-color: #f2f2f2;
+  border: #000 solid 1px;
+  border-radius: 10px;
+  padding: 25px 50px;
+  color: #000;
+}
+
+.signinBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.signinSignupLink {
+  color: #e83186;
+  font-weight: bold;
+}
+
+@media (max-width: 960px) {
+  .formStyled {
+    font-size: 16px;
+    max-width: 500px;
+  }
+  .formApplication {
+    display: none;
+  }
+  .formBackground {
+    height: 20vh;
+    padding: 40px;
+    gap: 10px;
+  }
+  .formBackground::after {
+    display: none;
+  }
+
+  .formTitle {
+    font-size: 20px;
+  }
+  .formInput {
+    font-size: 16px;
+  }
+}

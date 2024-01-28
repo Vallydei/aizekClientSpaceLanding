@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import './burgerMenuStyles.css';
 import Logo from '../Logo';
-import { Section } from './OptionalNavBar';
 
 const sections = [
   { id: 'reports', label: 'Отчеты' },
@@ -41,15 +40,19 @@ export default function BurgerMenu() {
   };
 
   return (
-    <div className="navBurger">
+    <div className="navMobContainer">
       <div className="logoBox">
-        <Logo />
-        <Link className="styledLink" to="/auth">
-          Вход
+        <Link to="/">
+          <Logo/>
         </Link>
-      </div>
 
-      <button className={`burger ${isOpen}`} onClick={toggleMenu}></button>
+        <div className='menuContainer'>
+          <Link className="styledLink" to="/auth">
+            Вход
+          </Link>
+          <button className={`burger ${isOpen}`} onClick={toggleMenu}></button>
+        </div>
+      </div>
       <div className={`background ${isOpen}`}></div>
       <div className={`menu ${isOpen}`}>
         <nav>
