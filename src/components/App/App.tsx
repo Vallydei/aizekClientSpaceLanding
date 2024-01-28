@@ -1,10 +1,10 @@
 import React from 'react';
 import GlobalStyles from './global';
 import Footer from './commonComponents/footerContainer/Footer';
-import { Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import MainPage from '../Pages/mainContainer/MainPage';
-import SignIn from '../Pages/signIn/SignIn';
-import SignUp from '../Pages/signUp/SignUp';
+import SignInPage from '../Pages/signIn/SignIn';
+import SignUpPage from '../Pages/signUp/SignUp';
 import OptionNavbar from './commonComponents/headerContainer/navBar/OptionalNavBar';
 
 function App(): JSX.Element {
@@ -13,9 +13,9 @@ function App(): JSX.Element {
       <GlobalStyles />
       <OptionNavbar />
       <Routes>
-        <Route path="/aizekClientSpaceLanding/" element={<MainPage />} />
-        <Route path="/aizekClientSpaceLanding/auth" element={<SignIn />} />
-        <Route path="/aizekClientSpaceLanding/signup" element={<SignUp />} />
+        <Route path="/aizekClientSpaceLanding" element={<MainPage />} />
+        <Route path="/aizekClientSpaceLanding/auth" element={<SignInPage />} />
+        <Route path="/aizekClientSpaceLanding/signup" element={<SignUpPage />} />
       </Routes>
       <Footer />
     </>

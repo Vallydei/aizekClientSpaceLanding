@@ -7,12 +7,8 @@ const sections = [
   { id: 'reports', label: 'Отчеты' },
   { id: 'data', label: 'Данные' },
   { id: 'prices', label: 'Цены' },
-  { id: 'contacts', label: 'Контакты' },
+  // { id: 'application', label: 'Контакты' },
 ];
-// type BurgerMenuProps = {
-//   sections: Section[];
-//   onClick: (sectionId: string) => Promise<void>;
-// };
 
 export default function BurgerMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

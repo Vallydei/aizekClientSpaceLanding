@@ -14,6 +14,7 @@ export default function SwiperComponent() {
   return (
     <>
       <Swiper
+        
         className="pricesSwiper"
         effect="coverflow"
         grabCursor={true}

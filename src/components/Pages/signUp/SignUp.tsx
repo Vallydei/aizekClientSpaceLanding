@@ -1,17 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { Title } from '../../App/commonComponents/Title/Title';
-import { FormText } from '../../App/commonComponents/Text/Text';
 import Button from '../../App/commonComponents/Button/Button';
+import './signUpPageStyles.css';
+import '../../App/commonComponents/Form/formStyles.css';
 
 type FormInput = {
-  name: string;
-  email: string;
-  message: string;
+  login: string;
+  password: string;
 };
 
-export default function SignIn() {
+export default function SignUpPage() {
   const navigate = useNavigate();
   const sumbmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,34 +24,30 @@ export default function SignIn() {
     }
   };
   return (
-    <form className="formStyled" onSubmit={(e) => sumbmitHandler(e)}>
-      <div className="formBackground" id="z">
-        <Title medium>Зарегистрируйтесь и получите доступ</Title>
-        <FormText>
-          Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию
-        </FormText>
-      </div>
-
-      <input className="formInput" name="name" type="text" placeholder="Имя" />
-      <input className="formInput" name="company" type="text" placeholder="Название компании" />
-      <input
-        className="formInput"
-        name="email"
-        type="email"
-        placeholder="Email (используется в качестве основного логина)"
-      />
-      <input className="formInput" name="password" type="text" placeholder="Пароль *****" />
-      <textarea
-        className="formTextarea"
-        name="message"
-        placeholder="Комментарий в свободной форме"
-      />
-      <div>
-        <Button type="submit">Зарегистрироваться</Button>
-        <span>
-          Есть логин? <Link to="/auth">Вход в систему</Link>
-        </span>
-      </div>
-    </form>
+    <div className="signupPageContainer">
+      <form className="formStyled signinForm" onSubmit={(e) => sumbmitHandler(e)}>
+        <div className="formBackground formBackgroundSignin" id="z">
+          <h2 className="formTitle">Зарегистрируйтесь и получите доступ</h2>
+          <p className="formText">
+            Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную
+            демонстрацию{' '}
+          </p>
+        </div>
+        <input className="formInput" name="name" type="text" placeholder="Имя" />
+        <input className="formInput" name="companyName" type="text" placeholder="Название компании" />
+        <input className="formInput" name="email" type="text" placeholder="E-mail (используется в качестве основного логина)" />
+        <input className="formInput" name="password" type="text" placeholder="Пароль *****" />
+        <textarea className="formTextarea" name="message" placeholder="Комментарий в свободной форме" />
+        <div className="signinBtnContainer">
+          <Button type="submit">Зарегистрироваться</Button>
+          <span className="signinSignupSpan">
+            Есть логин?{' '}
+            <Link className="signinSignupLink" to="/aizekClientSpaceLanding/auth">
+              Вход в систему
+            </Link>
+          </span>
+        </div>
+      </form>
+    </div>
   );
 }

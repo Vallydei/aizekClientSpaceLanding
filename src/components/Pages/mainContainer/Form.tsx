@@ -24,9 +24,9 @@ export default function Form() {
     }
   };
   return (
-    <div className="formApplicationContainer">
+    <div id="application" className="formApplicationContainer">
       <form className=" formStyled formApplication" onSubmit={(e) => sumbmitHandler(e)}>
-        <div className="formBackground" id="z">
+        <div className="formBackground">
           <Title medium>Узнать больше и протестировать продукт</Title>
           <p className='formText'>
             Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную

@@ -20,8 +20,8 @@ export default function MainPage() {
         <PossibilitiesArticle />
         <Form />
       </main>
-      <div className="pricesContainer" id="prices">
-        <div className="flexBoxPrices">
+      <div className="pricesContainer" >
+        <div className="flexBoxPrices" id="prices">
           <h2 className="pricesTitle">{footerProps.title}</h2>
           <p className="pricesText">{footerProps.text}</p>
           <SwiperComponent />

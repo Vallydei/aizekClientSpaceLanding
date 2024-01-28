@@ -8,7 +8,8 @@ const sections = [
   { id: 'reports', label: 'Отчеты' },
   { id: 'data', label: 'Данные' },
   { id: 'prices', label: 'Цены' },
-  { id: 'contacts', label: 'Контакты' },
+  { id: 'application', label: 'Контакты' },
+ 
 ];
 
 export default function NavBarDesctop(): JSX.Element {
@@ -48,8 +49,8 @@ export default function NavBarDesctop(): JSX.Element {
             Вход
           </Link>
           <div className="nacContainer">
-            <Button base className="btnApply">
-              Заявка
+            <Button onClick={() => onClick('application')} base className="btnApply">
+            Заявка
             </Button>
           </div>
         </div>

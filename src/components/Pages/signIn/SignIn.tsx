@@ -30,7 +30,7 @@ export default function SignIn() {
           <h2 className='formTitle'>Вход в систему</h2>
           <p className="formText">
             Если у вас еще нет логина и пароля, пожалуйста, пройдите{' '}
-            <Link className="signinSignupLink" to="/auth">
+            <Link className="signinSignupLink" to="/aizekClientSpaceLanding/signup">
               регистрацию
             </Link>
           </p>
@@ -43,7 +43,7 @@ export default function SignIn() {
           <Button type="submit">Войти</Button>
           <span className="signinSignupSpan">
             Нужен логин?{' '}
-            <Link className="signinSignupLink" to="/auth">
+            <Link className="signinSignupLink" to="/aizekClientSpaceLanding/signup">
               Зарегистрируйтесь
             </Link>
           </span>
