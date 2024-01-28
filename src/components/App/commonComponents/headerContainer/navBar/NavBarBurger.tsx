@@ -26,8 +26,8 @@ export default function BurgerMenu() {
     toggleMenu();
 
     try {
-      if (location.pathname !== '/') {
-        await navigate('/');
+      if (location.pathname !== '/aizekClientSpaceLanding') {
+        await navigate('/aizekClientSpaceLanding');
       }
 
       const section = document.getElementById(sectionId);
@@ -42,12 +42,12 @@ export default function BurgerMenu() {
   return (
     <div className="navMobContainer">
       <div className="logoBox">
-        <Link to="/">
+        <Link to="/aizekClientSpaceLanding">
           <Logo/>
         </Link>
 
         <div className='menuContainer'>
-          <Link className="styledLink" to="/auth">
+          <Link className="styledLink" to="/aizekClientSpaceLanding/auth">
             Вход
           </Link>
           <button className={`burger ${isOpen}`} onClick={toggleMenu}></button>

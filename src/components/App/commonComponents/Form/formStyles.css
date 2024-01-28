@@ -25,18 +25,23 @@
   content: '';
   background-image: url('img/Subtract.png');
   position: absolute;
-  background-size: 100% 900px;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   top: 0;
   left: 0;
   width: 100%;
-  height: 340%;
+  height: 330%;
   z-index: -1;
 }
+
 
 .formBackgroundSignin {
   text-align: start;
 }
+
+/* .formBackgroundSignin::after {
+  height: 320%;
+} */
 
 .formTitle {
   font-size: 27px;

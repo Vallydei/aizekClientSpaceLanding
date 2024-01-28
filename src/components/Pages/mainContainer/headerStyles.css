@@ -56,15 +56,16 @@
 .flexBoxHeaderDescription::after {
   content: '';
   position: absolute;
-  background-image: url('/img/Subtract.png');
+  background-image: url('/img/Subtract1.png');
   background-repeat: no-repeat;
-  background-size: 1500px 1500px;
-  top: -180px;
-  right: -350px;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 0% 85%);
+  background-size: cover;
+  top: -120px;
+  right: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 80%);
   width: 70%;
-  height: 130%;
+  height: 131%;
   z-index: -2;
+  overflow: hidden;
 }
 
 .boxHeader {

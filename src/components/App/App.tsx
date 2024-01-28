@@ -13,9 +13,9 @@ function App(): JSX.Element {
       <GlobalStyles />
       <OptionNavbar />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/auth" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/aizekClientSpaceLanding/" element={<MainPage />} />
+        <Route path="/aizekClientSpaceLanding/auth" element={<SignIn />} />
+        <Route path="/aizekClientSpaceLanding/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </>

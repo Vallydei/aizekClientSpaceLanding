@@ -16,8 +16,8 @@ export default function NavBarDesctop(): JSX.Element {
   const navigate = useNavigate();
   const onClick = async (sectionId: string) => {
     try {
-      if (location.pathname !== '/') {
-        await navigate('/');
+      if (location.pathname !== '/aizekClientSpaceLanding') {
+        await navigate('/aizekClientSpaceLanding');
       }
 
       const section = document.getElementById(sectionId);
@@ -33,7 +33,7 @@ export default function NavBarDesctop(): JSX.Element {
     <div className="flexBoxNav">
       <div className="navContainer">
         <nav className="navList" id="nav">
-          <Link to="/">
+          <Link to="/aizekClientSpaceLanding">
             <Logo />
           </Link>
 
@@ -44,7 +44,7 @@ export default function NavBarDesctop(): JSX.Element {
           ))}
         </nav>
         <div className="buttonBox">
-          <Link className="navLink" to="/auth">
+          <Link className="navLink" to="/aizekClientSpaceLanding/auth">
             Вход
           </Link>
           <div className="nacContainer">
