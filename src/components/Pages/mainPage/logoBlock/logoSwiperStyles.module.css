@@ -1,0 +1,20 @@
+.container {
+  padding: 120px 0 0;
+}
+
+.partnersLogos {
+  align-self: center;
+ background-color: inherit;
+}
+
+@media (max-width: 960px) {
+  .container {
+    padding: 60px 0 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    display: none;
+  }
+}

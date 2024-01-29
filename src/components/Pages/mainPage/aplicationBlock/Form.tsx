@@ -1,6 +1,6 @@
 import React from 'react';
-import { Title } from '../../App/commonComponents/Title/Title';
-import Button from '../../App/commonComponents/Button/Button';
+import { Title } from '../../../App/commonComponents/Title/Title';
+import Button from '../../../App/commonComponents/Button/Button';
 
 import axios from 'axios';
 
@@ -27,8 +27,8 @@ export default function Form() {
     <div id="application" className="formApplicationContainer">
       <form className=" formStyled formApplication" onSubmit={(e) => sumbmitHandler(e)}>
         <div className="formBackground">
-          <Title medium>Узнать больше и протестировать продукт</Title>
-          <p className='formText'>
+          <h2 className='formTitle'>Узнать больше и протестировать продукт</h2>
+          <p className="formText">
             Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную
             демонстрацию
           </p>

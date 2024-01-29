@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title } from '../../App/commonComponents/Title/Title';
+import { Title } from '../../../App/commonComponents/Title/Title';
 
 const articleProps = {
   title: 'Ключевые выгоды',

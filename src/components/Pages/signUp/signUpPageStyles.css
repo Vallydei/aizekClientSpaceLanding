@@ -1,14 +1,24 @@
 .signupPageContainer {
   min-height: 80vh;
-  padding: 70px 20px 0;
+  padding: 70px 0 70px;
   display: flex;
-
   overflow: hidden;
 }
 
 @media (max-width: 960px) {
   .signupPageContainer {
-    height: 90vh;
-    align-items: center;
+    min-height: 90vh;
+    align-items:center;
+    padding: 10vh 20px 0;
+    
   }
 }
+
+@media (max-width: 480px) {
+  .signupPageContainer {
+       padding: 15vh 20px 50px;
+    
+  }
+}
+
+

@@ -89,6 +89,10 @@
   display: none;
 }
 @media (max-width: 1300px) {
+  .boxHeader {
+    max-width: 41vw;
+
+  }
   .flexBoxHeader::before {
     width: 500px;
   }
@@ -98,13 +102,14 @@
   .flexBoxHeaderDescription::after {
     display: none;
   }
+}
+
+@media (max-width: 960px) {
   .boxHeader {
     padding-left: 20px;
     padding-right: 20px;
   }
-}
 
-@media (max-width: 960px) {
   .flexBoxHeader::before,
   .flexBoxHeader::after {
     display: none;

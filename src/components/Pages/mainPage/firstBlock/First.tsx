@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '../../App/commonComponents/Button/Button';
-import { Title } from '../../App/commonComponents/Title/Title';
+import Button from '../../../App/commonComponents/Button/Button';
+import { Title } from '../../../App/commonComponents/Title/Title';
 import './headerStyles.css';
 
 export default function First(): JSX.Element {
   return (
     <>
-      <div className="flexBoxHeader">
+      <div className="flexBoxHeader" >
         <div className="flexBoxHeaderDescription">
           <img className="mainImg" src="./img/main.svg" />
           <div className="boxHeader">

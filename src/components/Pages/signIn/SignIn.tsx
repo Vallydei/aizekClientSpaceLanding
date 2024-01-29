@@ -19,14 +19,14 @@ export default function SignIn() {
       await axios.post('/api/auth/signin', formData);
       e.currentTarget.reset();
       navigate('/');
-    } catch (error) {
+    } catch (error) { File 
       console.log(error);
     }
   };
   return (
     <div className="signinPageContainer">
       <form className="formStyled signinForm" onSubmit={(e) => sumbmitHandler(e)}>
-        <div className="formBackground formBackgroundSignin" id="z">
+        <div className="formBackground">
           <h2 className='formTitle'>Вход в систему</h2>
           <p className="formText">
             Если у вас еще нет логина и пароля, пожалуйста, пройдите{' '}

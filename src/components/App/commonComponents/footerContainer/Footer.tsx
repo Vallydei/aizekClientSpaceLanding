@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import './footerStyles.css';
 
 const footerProps = {
-  logoImg: './svg/footerLogo.svg#footerLogo',
+  logoImg: './svg/footerLogo.svg',
 };
 const footerNav = [
   { id: 1, label: 'О продукте', link: '/' },
@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="footer" id="contacts">
       <div className="footerNav">
         <div>
-          <img src={footerProps.logoImg} alt="" />
+          <img  className='footerLogo' src={footerProps.logoImg} alt="logo" />
         </div>
         <nav>
           <ul className="footerList">

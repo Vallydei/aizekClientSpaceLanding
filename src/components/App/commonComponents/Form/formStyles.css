@@ -17,10 +17,11 @@
   justify-content: center;
   background-color: rgba(253, 107, 33, 0.1);
   height: 270px;
-  padding: 0 160px;
+  padding: 0 165px;
   gap: 20px;
   border-radius: 10px;
   position: relative;
+  text-align: start;
 }
 
 .formBackground::after {
@@ -36,13 +37,16 @@
   z-index: -1;
 }
 
-.formBackgroundSignin {
-  text-align: start;
+.formTitle {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
-.formTitle {
-  font-size: 27px;
-  font-weight: 800;
+.formText {
+  font-family: 'Montserrat', sans-serif;
+  
 }
 
 .formInput {
@@ -72,12 +76,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
+
 }
 
 .signinSignupLink {
   color: #e83186;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 
 @media (max-width: 960px) {
@@ -98,9 +104,32 @@
   }
 
   .formTitle {
-    font-size: 20px;
+    font-size: 19px;
   }
   .formInput {
     font-size: 16px;
+    height: 40px;
+    padding: 15px 15px;
   }
+  .formTextarea {
+    font-size: 16px;
+    height: 80px;
+    padding: 15px 15px;
+  }
+}
+
+@media (max-width: 480px){
+  .formTitle {
+    font-size: 16px;
+  }
+
+  .formText {
+    font-size: 14px;
+    
+  }
+
+  .signinSignupSpan {
+    font-size: 14px;
+  }
+
 }

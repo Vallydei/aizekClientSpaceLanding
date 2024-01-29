@@ -25,8 +25,8 @@ export default function SignUpPage() {
   };
   return (
     <div className="signupPageContainer">
-      <form className="formStyled signinForm" onSubmit={(e) => sumbmitHandler(e)}>
-        <div className="formBackground formBackgroundSignin" id="z">
+      <form className="formStyled" onSubmit={(e) => sumbmitHandler(e)}>
+        <div className="formBackground">
           <h2 className="formTitle">Зарегистрируйтесь и получите доступ</h2>
           <p className="formText">
             Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную

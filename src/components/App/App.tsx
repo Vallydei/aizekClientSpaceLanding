@@ -2,7 +2,7 @@ import React from 'react';
 import GlobalStyles from './global';
 import Footer from './commonComponents/footerContainer/Footer';
 import { Routes, Route } from 'react-router-dom';
-import MainPage from '../Pages/mainContainer/MainPage';
+import MainPage from '../Pages/mainPage/MainPage';
 import SignInPage from '../Pages/signIn/SignIn';
 import SignUpPage from '../Pages/signUp/SignUp';
 import OptionNavbar from './commonComponents/headerContainer/navBar/OptionalNavBar';

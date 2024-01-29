@@ -7,7 +7,6 @@ const sections = [
   { id: 'reports', label: 'Отчеты' },
   { id: 'data', label: 'Данные' },
   { id: 'prices', label: 'Цены' },
-  // { id: 'application', label: 'Контакты' },
 ];
 
 export default function BurgerMenu() {
@@ -25,10 +24,13 @@ export default function BurgerMenu() {
       if (location.pathname !== '/aizekClientSpaceLanding') {
         await navigate('/aizekClientSpaceLanding');
       }
-
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        const rect = section.getBoundingClientRect();
+        window.scrollTo({
+          top: rect.top + window.scrollY - 110,
+          behavior: 'smooth',
+        });
       }
     } catch (error) {
       console.error('Navigation failed:', error);
@@ -39,10 +41,10 @@ export default function BurgerMenu() {
     <div className="navMobContainer">
       <div className="logoBox">
         <Link to="/aizekClientSpaceLanding">
-          <Logo/>
+          <Logo />
         </Link>
 
-        <div className='menuContainer'>
+        <div className="menuContainer">
           <Link className="styledLink" to="/aizekClientSpaceLanding/auth">
             Вход
           </Link>
@@ -53,14 +55,17 @@ export default function BurgerMenu() {
       <div className={`menu ${isOpen}`}>
         <nav>
           {sections.map((section, index) => (
-            <a
-              key={section.id}
-              className={isMenuOpen ? 'appear' : ''}
-              style={{ animationDelay: `0.${index + 1}s` }}
-              onClick={() => onClick(section.id)}
-            >
-              {section.label}
-            </a>
+            <React.Fragment key={section.id}>
+              {(section.label !== 'Данные' || window.innerWidth >= 480) && (
+                <a
+                  className={isMenuOpen ? 'appear' : ''}
+                  style={{ animationDelay: `0.${index + 1}s` }}
+                  onClick={() => onClick(section.id)}
+                >
+                  {section.label}
+                </a>
+              )}
+            </React.Fragment>
           ))}
         </nav>
       </div>

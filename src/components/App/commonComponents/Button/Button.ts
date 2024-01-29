@@ -11,7 +11,7 @@ const Button = styled('button', {
 })<CustomButtonProps>`
   width: ${props => props.base ? '160px' : props.medium ? '288px' : '475px'};
   height: ${props => props.base ? '40px' : props.medium ? '50px' : '80px'};
-  font-size:  ${props => props.base ? '16px' : props.medium ? '16px' :'32px'};
+  font-size:  ${props => props.base ? '16px' : props.medium ? '18px' :'32px'};
   background-color: #ef2a82;
   color: #fff;
   border-radius: 68px;
@@ -22,7 +22,11 @@ const Button = styled('button', {
   }
 
   @media (max-width:960px) {
-    width: 100%;
+    width: 170px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+
   }
 `;
 
