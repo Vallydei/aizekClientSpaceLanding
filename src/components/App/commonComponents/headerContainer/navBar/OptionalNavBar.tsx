@@ -23,5 +23,5 @@ export default function OptionNavbar(): JSX.Element {
     };
   }, []);
 
-  return <>{deviceWidth ? <NavBarDesktop /> : <NavBarBurger />}</>;
+  return <header>{deviceWidth ? <NavBarDesktop /> : <NavBarBurger />}</header>;
 }

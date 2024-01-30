@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from '../Logo';
 import Button from '../../Button/Button';
 import './navBarStyles.css';
@@ -9,18 +9,26 @@ const sections = [
   { id: 'data', label: 'Данные' },
   { id: 'prices', label: 'Цены' },
   { id: 'application', label: 'Контакты' },
- 
 ];
 
 export default function NavBarDesctop(): JSX.Element {
   const location = useLocation();
   const navigate = useNavigate();
+  useEffect(() => {
+    const navBar = document.querySelector('.flexBoxNav');
+    if (location.pathname !== '/aizekClientSpaceLanding') {
+      navBar?.classList.add('navbarBorder');
+    }
+  });
+
   const onClick = async (sectionId: string) => {
     try {
       if (location.pathname !== '/aizekClientSpaceLanding') {
         await navigate('/aizekClientSpaceLanding');
+        const navBar = document.querySelector('.flexBoxNav');
+        navBar?.classList.remove('navbarBorder');
       }
-
+      
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
@@ -34,9 +42,9 @@ export default function NavBarDesctop(): JSX.Element {
     <div className="flexBoxNav">
       <div className="navContainer">
         <nav className="navList" id="nav">
-          <Link to="/aizekClientSpaceLanding">
+          <div onClick={()=> onClick("./aizekClientSpaceLanding")} >
             <Logo />
-          </Link>
+          </div>
 
           {sections.map((section) => (
             <a className="navLink" key={section.id} onClick={() => onClick(section.id)}>
@@ -50,7 +58,7 @@ export default function NavBarDesctop(): JSX.Element {
           </Link>
           <div className="nacContainer">
             <Button onClick={() => onClick('application')} base className="btnApply">
-            Заявка
+              Заявка
             </Button>
           </div>
         </div>

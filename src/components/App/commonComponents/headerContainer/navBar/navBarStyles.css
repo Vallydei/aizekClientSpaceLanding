@@ -7,6 +7,10 @@
 
 }
 
+.navbarBorder{
+  border-bottom: 2vh solid #EF2A82;
+}
+
 .navContainer {
   max-width: 1180px;
   width: 100%;

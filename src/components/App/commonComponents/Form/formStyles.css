@@ -41,49 +41,96 @@
   font-size: 28px;
   font-weight: 800;
   font-family: 'Montserrat', sans-serif;
-
 }
 
 .formText {
   font-family: 'Montserrat', sans-serif;
-  
 }
 
-.formInput {
+.formInput,
+.formTextarea {
   width: 100%;
   height: 59px;
   background-color: #f2f2f2;
-  border: #000 solid 1px;
+  border: #0a1e32 solid 1px;
   border-radius: 10px;
   padding: 15px 50px;
-  color: #000;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
 }
 
 .formTextarea {
-  width: 100%;
   height: 139px;
-  background-color: #f2f2f2;
-  border: #000 solid 1px;
-  border-radius: 10px;
   padding: 25px 50px;
   resize: vertical;
-  font-size: 24px;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
   color: #000;
 }
 
-.signinBtnContainer {
+.formInput:hover,
+.formTextarea:hover {
+  border: #616161 solid 1px;
+}
+
+.formInput:hover::placeholder,
+.formTextarea:hover::placeholder {
+  color: #616161;
+}
+
+.formInput:active,
+.formTextarea:active {
+  border: #000000 solid 1px;
+}
+
+.errorInput {
+  border: #d60b52 solid 1px;
+}
+
+.errorMsgContainer {
+
+  height: 60px;
+  text-align: center;
+  display: flex; 
+  align-items: center; 
+}
+
+
+.errorMessage {
+  width: 100%;
+  color: #d60b52;
+  font-weight: 800;
+  opacity: 0;
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.formBtnContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .signinSignupLink {
   color: #e83186;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
-  
 }
 
 @media (max-width: 960px) {
@@ -118,18 +165,16 @@
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .formTitle {
     font-size: 16px;
   }
 
   .formText {
     font-size: 14px;
-    
   }
 
   .signinSignupSpan {
     font-size: 14px;
   }
-
 }

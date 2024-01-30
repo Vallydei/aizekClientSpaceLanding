@@ -76,9 +76,12 @@
 }
 
 .swiperComponent:hover .buttonPrices {
-  cursor: pointer;
   background-color: #ef2a82;
-  border: none;
+  border: 1px solid rgba(42, 64, 124, 0.7);
+}
+
+.swiperComponent:active .buttonPrices {
+  border: 1px solid #2a407c;
 }
 
 @media (max-width: 1300px) {
