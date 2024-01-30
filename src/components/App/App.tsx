@@ -13,7 +13,7 @@ function App(): JSX.Element {
       <GlobalStyles />
       <OptionNavbar />
       <Routes>
-        <Route path="/aizekClientSpaceLanding" element={<MainPage />} />
+        <Route path="/aizekClientSpaceLanding/" element={<MainPage />} />
         <Route path="/aizekClientSpaceLanding/auth" element={<SignInPage />} />
         <Route path="/aizekClientSpaceLanding/signup" element={<SignUpPage />} />
       </Routes>

@@ -17,7 +17,7 @@ export default function BurgerMenu() {
 
   useEffect(() => {
     const navBar = document.querySelector('.navMobContainer');
-    if (location.pathname !== '/aizekClientSpaceLanding') {
+    if (location.pathname !== '/aizekClientSpaceLanding/') {
       navBar?.classList.add('navbarBorder');
     }
   });
@@ -26,8 +26,8 @@ export default function BurgerMenu() {
 
   const logoOnClick = async () => {
     try {
-      if (location.pathname !== '/aizekClientSpaceLanding') {
-        await navigate('/aizekClientSpaceLanding');
+      if (location.pathname !== '/aizekClientSpaceLanding/' || '/aizekClientSpaceLanding') {
+        await navigate('/aizekClientSpaceLanding/');
         const navBar = document.querySelector('.navMobContainer');
         navBar?.classList.remove('navbarBorder');
       }
@@ -39,8 +39,8 @@ export default function BurgerMenu() {
     toggleMenu();
 
     try {
-      if (location.pathname !== '/aizekClientSpaceLanding') {
-        await navigate('/aizekClientSpaceLanding');
+      if (location.pathname !== '/aizekClientSpaceLanding/') {
+        await navigate('/aizekClientSpaceLanding/');
         const navBar = document.querySelector('.navMobContainer');
         navBar?.classList.remove('navbarBorder');
       }

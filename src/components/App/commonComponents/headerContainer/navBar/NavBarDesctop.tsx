@@ -16,15 +16,15 @@ export default function NavBarDesctop(): JSX.Element {
   const navigate = useNavigate();
   useEffect(() => {
     const navBar = document.querySelector('.flexBoxNav');
-    if (location.pathname !== '/aizekClientSpaceLanding') {
+    if (location.pathname !== '/aizekClientSpaceLanding/' || '/aizekClientSpaceLanding') {
       navBar?.classList.add('navbarBorder');
     }
   });
 
   const onClick = async (sectionId: string) => {
     try {
-      if (location.pathname !== '/aizekClientSpaceLanding') {
-        await navigate('/aizekClientSpaceLanding');
+      if (location.pathname !== '/aizekClientSpaceLanding/') {
+        await navigate('/aizekClientSpaceLanding/');
         const navBar = document.querySelector('.flexBoxNav');
         navBar?.classList.remove('navbarBorder');
       }
@@ -42,7 +42,7 @@ export default function NavBarDesctop(): JSX.Element {
     <div className="flexBoxNav">
       <div className="navContainer">
         <nav className="navList" id="nav">
-          <div onClick={()=> onClick("./aizekClientSpaceLanding")} >
+          <div onClick={()=> onClick("./aizekClientSpaceLanding/")} >
             <Logo />
           </div>
 
