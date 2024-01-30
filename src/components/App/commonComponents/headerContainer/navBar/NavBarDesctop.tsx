@@ -15,8 +15,8 @@ export default function NavBarDesctop(): JSX.Element {
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    const navBar = document.querySelector('.flexBoxNav');
-    if (location.pathname !== '/aizekClientSpaceLanding/' || '/aizekClientSpaceLanding') {
+    if (location.pathname !== '/aizekClientSpaceLanding/') {
+      const navBar = document.querySelector('.flexBoxNav');
       navBar?.classList.add('navbarBorder');
     }
   });

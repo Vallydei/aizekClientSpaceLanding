@@ -16,8 +16,8 @@ export default function BurgerMenu() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
-    const navBar = document.querySelector('.navMobContainer');
     if (location.pathname !== '/aizekClientSpaceLanding/') {
+      const navBar = document.querySelector('.navMobContainer');
       navBar?.classList.add('navbarBorder');
     }
   });
@@ -26,7 +26,7 @@ export default function BurgerMenu() {
 
   const logoOnClick = async () => {
     try {
-      if (location.pathname !== '/aizekClientSpaceLanding/' || '/aizekClientSpaceLanding') {
+      if (location.pathname !== '/aizekClientSpaceLanding/') {
         await navigate('/aizekClientSpaceLanding/');
         const navBar = document.querySelector('.navMobContainer');
         navBar?.classList.remove('navbarBorder');
