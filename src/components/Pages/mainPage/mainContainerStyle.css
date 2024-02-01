@@ -1,7 +1,7 @@
 .mainContainer {
   max-width: 1180px;
   width: 100%;
-  margin: 0 auto;
+  margin: 50px auto 0;
 }
 
 .flexBoxContainer {
@@ -55,7 +55,6 @@
   color: #000000;
   font-size: 16px;
   padding-bottom: 10px;
-
 }
 
 .contText {
@@ -85,7 +84,6 @@
   .mainContainer {
     padding: 0 20px;
   }
-   
 }
 
 @media (max-width: 960px) {
@@ -101,6 +99,7 @@
     line-height: 1.5;
   }
   .boxSection {
+    margin-top: 20px;
     flex-direction: column;
     gap: 50px;
   }
@@ -129,7 +128,6 @@
   }
 
   .reportsContainer {
-    /* padding-top: 40px; */
     margin-bottom: 0;
   }
   .contImg {
@@ -148,4 +146,11 @@
   .formApplicationContainer {
     display: none;
   }
+}
+
+@media (max-width: 480px) {
+  .boxSection {
+    gap: 15px;
+  }
+
 }

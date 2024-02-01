@@ -37,9 +37,8 @@
 
 @media (max-width: 960px) {
   .flexBoxPrices {
-    /* padding-top: 260px; */
     align-items: flex-start;
-    font-size: 16px;
+    font-size: 18px;
     text-align: start;
   }
   .pricesText {

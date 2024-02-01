@@ -7,6 +7,7 @@ import { Text } from '../../../App/commonComponents/Text/Text';
 const footerProps = {
   title: 'Простые цены',
   text: 'Почти все наши клиенты выбирают опцию “Оптимум”, т.к. почти всем нужны специфические данные и графики. Опция “Оптимум” позволяет сохранить гибкость и экономичность, постепенно расширяя функционал.',
+  textMob: 'Почти все наши клиенты выбирают опцию “Оптимум”',
 };
 
 const swiperProps = [
@@ -20,7 +21,7 @@ export default function SwiperComponent() {
     <div className="pricesContainer">
       <div className="flexBoxPrices">
         <h2 className="pricesTitle">{footerProps.title}</h2>
-        <p className="pricesText">{footerProps.text}</p>
+        <p className="pricesText">{window.innerWidth > 460 ? footerProps.text : footerProps.textMob}</p>
         <Swiper
           id="prices"
           className="pricesSwiper"
