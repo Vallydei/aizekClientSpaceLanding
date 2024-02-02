@@ -7,7 +7,7 @@ export type Section = {
   label: string;
 };
 
-export default function OptionNavbar(): JSX.Element {
+export default function Header(): JSX.Element {
   const [deviceWidth, setDeviceWidth] = useState<boolean>(window.innerWidth > 960);
 
   useEffect(() => {

@@ -1,21 +1,22 @@
 import React from 'react';
+import FirstBlock from './firstBlock/FirstBlock';
 import CluesArticle from './cluesBlock/CluesArticle';
-import PossibilitiesArticle from './PossibilitiesArticle';
-import Form from './aplicationBlock/Form';
-import First from './firstBlock/First';
+import LogoSwiper from './logoBlock/LogoSwiper';
+import PossibilitiesArticle from './PossibilitieBlock/PossibilitiesArticle';
+import ApplicationForm from './aplicationBlock/ApplicationForm';
 import SwiperComponent from './pricesBlock/SwiperComponent';
 import './pricesBlock/lastBlockStyles.css';
-import LogoSwiper from './logoBlock/LogoSwiper';
+import './mainPageStyles.css'
 
 export default function MainPage() {
   return (
     <>
-      <First />
+      <FirstBlock />
       <main className="mainContainer">
         <CluesArticle />
         <LogoSwiper />
         <PossibilitiesArticle />
-        <Form />
+        <ApplicationForm />
       </main>
       <SwiperComponent />
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Title } from '../../App/commonComponents/Title/Title';
-import { Text } from '../../App/commonComponents/Text/Text';
-import './mainContainerStyle.css';
+import { Title } from '../../../App/commonComponents/Title/Title';
+import { Text } from '../../../App/commonComponents/Text/Text';
+import './possibilitieStyles.css';
 
 const possibilitieProps = [
   {
@@ -34,12 +34,8 @@ export default function PossibilitiesArticle(): JSX.Element {
   return (
     <div className="reportsContainer" id="reports">
       {possibilitieProps.map((possibilitie, index) => (
-        <div className="flexBoxReports">
-          <div
-            style={{ order: index === 1 ? 1 : 'auto' }}
-            key={possibilitie.id}
-            className="contText"
-          >
+        <div key={possibilitie.id} className="flexBoxReports">
+          <div style={{ order: index === 1 ? 1 : 'auto' }} className="contText">
             <Title>{possibilitie.title}</Title>
             <Text className="bigger">
               {window.innerWidth > 460 ? possibilitie.text : possibilitie.textMob}

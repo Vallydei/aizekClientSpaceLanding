@@ -1,9 +1,3 @@
-.mainContainer {
-  max-width: 1180px;
-  width: 100%;
-  margin: 50px auto 0;
-}
-
 .flexBoxContainer {
   display: flex;
   flex-direction: column;
@@ -40,58 +34,25 @@
   line-height: 1.5;
 }
 
-.reportsContainer {
-  margin-bottom: 120px;
-}
-.flexBoxReports {
-  display: flex;
-  margin-top: 120px;
-  width: 100%;
-  justify-content: space-between;
-  gap: 7%;
+.iconSection {
+  width: 200px;
 }
 
 .sectionTitle {
   color: #000000;
   font-size: 16px;
   padding-bottom: 10px;
+  line-height: 1.2;
 }
 
-.contText {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  gap: 20px;
-}
-
-.contImg {
-  width: 50%;
-}
-
-.imgMain {
-  border-radius: 38px;
-  width: 100%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s;
-}
-
-.imgMain:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 1300px) {
-  .mainContainer {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 960px) {
+@media (max-width: 480px) {
   .flexBoxContainer {
     align-items: start;
     text-align: start;
   }
-
+  .boxSection {
+    gap: 15px;
+  }
   .flexBoxTextContainer {
     padding: 0;
     font-size: 14px;
@@ -120,37 +81,4 @@
     padding-bottom: 10px;
     line-height: 1.2;
   }
-
-  .flexBoxReports {
-    flex-direction: column;
-    gap: 40px;
-    margin-top: 25px;
-  }
-
-  .reportsContainer {
-    margin-bottom: 0;
-  }
-  .contImg {
-    width: 100%;
-  }
-
-  .imgMain:hover {
-    transition: unset;
-    transform: unset;
-  }
-
-  .contImg {
-    order: 1;
-  }
-
-  .formApplicationContainer {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .boxSection {
-    gap: 15px;
-  }
-
 }

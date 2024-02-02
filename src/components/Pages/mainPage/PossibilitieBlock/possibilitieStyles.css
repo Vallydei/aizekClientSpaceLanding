@@ -1,0 +1,59 @@
+.reportsContainer {
+    margin-bottom: 120px;
+  }
+  
+  .flexBoxReports {
+    display: flex;
+    margin-top: 120px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 7%;
+  }
+
+  .contText {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .contImg {
+    width: 50%;
+  }
+  
+  .imgMain {
+    border-radius: 38px;
+    width: 100%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+  }
+  
+  .imgMain:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 960px) {
+    .flexBoxReports {
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 25px;
+      }
+    
+      .reportsContainer {
+        margin-bottom: 0;
+      }
+      .contImg {
+        width: 100%;
+      }
+    
+      .imgMain:hover {
+        transition: unset;
+        transform: unset;
+      }
+    
+      .contImg {
+        order: 1;
+      }
+    
+  }

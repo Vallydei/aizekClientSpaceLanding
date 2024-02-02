@@ -4,18 +4,17 @@
   width: 100%;
   background-color: #172755;
   position: relative;
-
 }
 
-.navbarBorder{
-  border-bottom: 2vh solid #EF2A82;
+.navbarBorder {
+  border-bottom: 2vh solid #ef2a82;
 }
 
 .navContainer {
   max-width: 1180px;
   width: 100%;
   display: flex;
-  margin:0 auto;
+  margin: 0 auto;
   height: 10vh;
   z-index: 4;
   align-items: center;
@@ -48,4 +47,3 @@
   gap: 20px;
   padding: 0 20px;
 }
-

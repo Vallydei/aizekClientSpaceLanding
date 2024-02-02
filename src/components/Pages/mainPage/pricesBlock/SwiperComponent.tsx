@@ -21,7 +21,9 @@ export default function SwiperComponent() {
     <div className="pricesContainer">
       <div className="flexBoxPrices">
         <h2 className="pricesTitle">{footerProps.title}</h2>
-        <p className="pricesText">{window.innerWidth > 460 ? footerProps.text : footerProps.textMob}</p>
+        <p className="pricesText">
+          {window.innerWidth > 460 ? footerProps.text : footerProps.textMob}
+        </p>
         <Swiper
           id="prices"
           className="pricesSwiper"
@@ -48,7 +50,8 @@ export default function SwiperComponent() {
           {swiperProps.map((slide) => (
             <SwiperSlide className="swiperComponent" key={slide.id}>
               <h3>{slide.tarif}</h3>
-              <Text bigger>{slide.features}</Text> <h2>{slide.price}</h2>
+              <p className="textPrices">{slide.features}</p>
+              <h2>{slide.price}</h2>
               <Text>{slide.period}</Text> <button className="buttonPrices">Запрос</button>{' '}
             </SwiperSlide>
           ))}

@@ -49,6 +49,12 @@
   font-weight: 800;
 }
 
+.textPrices {
+  color: #8794ba;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .swiperComponent:hover {
   background-color: #ffffff;
   color: #0f1f4b;

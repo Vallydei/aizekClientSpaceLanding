@@ -1,5 +1,6 @@
 import React from 'react';
 import { Title } from '../../../App/commonComponents/Title/Title';
+import './cluesArticleStyles.css'
 
 const articleProps = {
   title: 'Ключевые выгоды',

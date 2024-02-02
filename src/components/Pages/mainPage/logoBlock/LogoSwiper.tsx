@@ -14,7 +14,6 @@ export default function LogoSwiper() {
     for (let i = 0; i <= 11; ++i) {
       const fileName = i;
       logosList.push(`${filePath}/${fileName}.png`);
-      console.log(logosList);
     }
     setLogos(logosList);
   }, []);
@@ -43,8 +42,9 @@ export default function LogoSwiper() {
       breakpoints={{
         960: {
           enabled: false,
-          slidesPerView: 12,
+          slidesPerView: 11,
           spaceBetween: 20,
+          loop: false,
         },
       }}
     >

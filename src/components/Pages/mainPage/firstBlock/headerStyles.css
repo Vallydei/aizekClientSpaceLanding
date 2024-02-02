@@ -79,6 +79,12 @@
   z-index: 5;
 }
 
+.headerTitle {
+  color: #ffffff;
+  font-size:50px;
+  font-weight: 800;
+}
+
 .headerText {
   font-size: 18px;
   line-height: 1.5;
@@ -119,6 +125,10 @@
     background-size: cover;
     padding: 0 0 130px;
     font-size: 18px;
+  }
+
+  .headerTitle{
+    font-size: 31px;
   }
 
   .mainImg {

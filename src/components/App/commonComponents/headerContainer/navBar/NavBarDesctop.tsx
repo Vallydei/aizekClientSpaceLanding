@@ -28,11 +28,10 @@ export default function NavBarDesctop(): JSX.Element {
         const navBar = document.querySelector('.flexBoxNav');
         navBar?.classList.remove('navbarBorder');
       }
-      
+
       const section = document.getElementById(sectionId);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
-        console.log('!');
       }
     } catch (error) {
       console.error('Navigation failed:', error);
@@ -42,7 +41,7 @@ export default function NavBarDesctop(): JSX.Element {
     <div className="flexBoxNav">
       <div className="navContainer">
         <nav className="navList" id="nav">
-          <div onClick={()=> onClick("./aizekClientSpaceLanding/")} >
+          <div onClick={() => onClick('./aizekClientSpaceLanding/')}>
             <Logo />
           </div>
 
@@ -53,7 +52,11 @@ export default function NavBarDesctop(): JSX.Element {
           ))}
         </nav>
         <div className="buttonBox">
-          <Link className="navLink" to="/aizekClientSpaceLanding/auth">
+          <Link
+            className="navLink"
+            // to="/aizekClientSpaceLanding/auth"
+            to="https://clientspace.aizek.io"
+          >
             Вход
           </Link>
           <div className="nacContainer">

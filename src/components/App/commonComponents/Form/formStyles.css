@@ -89,14 +89,16 @@
   border: #d60b52 solid 1px;
 }
 
-.errorMsgContainer {
-
-  height: 60px;
-  text-align: center;
-  display: flex; 
-  align-items: center; 
+.errorInput:focus {
+  border: #d60b52 solid 1px;
 }
 
+.errorMsgContainer {
+  height: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
 
 .errorMessage {
   width: 100%;

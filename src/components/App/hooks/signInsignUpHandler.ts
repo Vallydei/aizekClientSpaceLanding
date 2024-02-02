@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export type SumbmitHandlerType = {
@@ -45,3 +46,16 @@ export const useSubmitHandler = (props: SumbmitHandlerType) => {
 
   return handleSubmit;
 };
+
+// this._axiosConfig = {
+//   validateStatus: (status: number) => status < 526,
+//   timeout: 120_000,
+//   withCredentials: false,
+//   reRequest: true,
+//   headers: {
+//     Realm: this._realm,
+//     'Content-Type': 'application/json',
+//   },
+// };
+
+// this._axiosInstance = axios.create(this._axiosConfig);
