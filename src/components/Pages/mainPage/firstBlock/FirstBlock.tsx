@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../../../App/commonComponents/Button/Button';
-import { Title } from '../../../App/commonComponents/Title/Title';
 import './headerStyles.css';
 
 export default function FirstBlock(): JSX.Element {
