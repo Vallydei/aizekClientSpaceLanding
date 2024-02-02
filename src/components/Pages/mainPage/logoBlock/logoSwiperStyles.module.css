@@ -6,8 +6,8 @@
   align-self: center;
 }
 
-.swiper-slide {
-  background-color: #f8f9ff;
+.partnersLogos, .swiper-slide {
+  background-color: #f8f9ff !important;
 }
 
 @media (max-width: 960px) {
