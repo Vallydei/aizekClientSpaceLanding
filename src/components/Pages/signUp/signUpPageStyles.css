@@ -5,20 +5,79 @@
   overflow: hidden;
 }
 
+.signupBtn {
+  width: 475px;
+  height: 80px;
+  font-size: 32px;
+  background-color: #ef2a82;
+  color: #fff;
+  border-radius: 68px;
+  border: none;
+}
+
+.signupBtn:hover {
+  background-color: #f17bb0;
+}
+
+.signupBtn:active {
+  background-color: #e83186;
+}
+
+.signinSignupLink {
+  color: #e83186;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.checkboxOrigin {
+  position: relative;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkboxCustom {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border: black solid 1px;
+  border-radius: 10px;
+}
+
+.checkboxCustom:after {
+  content: '';
+  position: absolute;
+  background-image: url('/img/cheked.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: none;
+  width: 50px;
+  height: 50px;
+}
+
+.checkboxOrigin:checked + .checkboxCustom::after {
+  display: block;
+}
+
 @media (max-width: 960px) {
   .signupPageContainer {
     min-height: 90vh;
-    align-items:center;
+    align-items: center;
     padding: 10vh 20px 0;
-    
+  }
+  .signupBtn {
+    width: 100%;
+    font-size: 24px;
+    margin: 40px 0 60px;
+  }
+  .signinSignupLink {
+    display: block;
   }
 }
-
 @media (max-width: 480px) {
   .signupPageContainer {
-       padding: 15vh 20px 50px;
-    
+    padding: 15vh 20px 50px;
   }
+
 }
-
-

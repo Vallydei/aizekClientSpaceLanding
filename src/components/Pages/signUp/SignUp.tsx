@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../App/commonComponents/Button/Button';
 import './signUpPageStyles.css';
 import '../../App/commonComponents/Form/formStyles.css';
 // import { useSubmitHandler } from '../../App/hooks/signInsignUpHandler';
@@ -25,6 +24,13 @@ interface IFieldErrors {
   company?: Errors;
   [key: string]: Errors | undefined;
 }
+
+const signupPageContent = {
+  text: 'Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную демонстрацию',
+  textMob: 'Расскажите про вашу задачу и мы настроим систему под вас',
+  placeholderLogin: 'E-mail (используется в качестве основного логина)',
+  placeholderLoginMob: 'E-mail (логин)',
+};
 
 export default function SignUpPage() {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -98,7 +104,7 @@ export default function SignUpPage() {
     const errors: IFieldErrors = validateFields();
 
     if (Object.keys(errors).length) {
-      setInput(prevState => ({
+      setInput((prevState) => ({
         ...prevState,
         errors,
         isSubmitted: false,
@@ -113,7 +119,7 @@ export default function SignUpPage() {
     }
     const response = await axios.post(signUpPageProps.apiPath, { email, organisation: company });
     if (response.data.error) {
-      setInput(prevState => ({
+      setInput((prevState) => ({
         ...prevState,
         errors,
         isSubmitted: false,
@@ -134,8 +140,7 @@ export default function SignUpPage() {
         <div className="formBackground">
           <h2 className="formTitle">Зарегистрируйтесь и получите доступ</h2>
           <p className="formText">
-            Расскажите про вашу задачу и мы настроим для вас индивидуальную интерактивную
-            демонстрацию{' '}
+            {window.innerWidth > 460 ? signupPageContent.text : signupPageContent.textMob}
           </p>
         </div>
         <input className="formInput" name="name" type="text" placeholder="Имя" />
@@ -155,7 +160,11 @@ export default function SignUpPage() {
           className="formInput"
           name="email"
           type="email"
-          placeholder="E-mail (используется в качестве основного логина)"
+          placeholder={
+            window.innerWidth > 460
+              ? signupPageContent.placeholderLogin
+              : signupPageContent.placeholderLoginMob
+          }
           onChange={handleInputChange}
           value={input.email}
           maxLength={1000}
@@ -167,9 +176,11 @@ export default function SignUpPage() {
           name="message"
           placeholder="Комментарий в свободной форме"
         />
-        <div className="errorMsgContainer"></div>
+        {/* <div className="errorMsgContainer"></div> */}
         <div className="formBtnContainer">
-          <Button type="submit">Зарегистрироваться</Button>
+          <button className="signupBtn" type="submit">
+            Зарегистрироваться
+          </button>
           <span className="signinSignupSpan">
             Есть логин?{' '}
             <Link className="signinSignupLink" to="/aizekClientSpaceLanding/auth">
@@ -177,6 +188,24 @@ export default function SignUpPage() {
             </Link>
           </span>
         </div>
+        <label htmlFor="policyAgreement">
+          <input
+            type="checkbox"
+            className="checkboxOrigin"
+            id="policyAgreement"
+            name="policyAgreement"
+            value="policyAgreement"
+          />
+          <div className="checkboxCustom"></div>
+          Заполняя данную регистрационную форму, вы принимаете{' '}
+          <Link className="signinSignupLink" to="/policy">
+            правила сервиса
+          </Link>{' '}
+          и{' '}
+          <Link className="signinSignupLink" to="/dataprocessing">
+            обработки персональных данных
+          </Link>
+        </label>
       </form>
     </div>
   );
