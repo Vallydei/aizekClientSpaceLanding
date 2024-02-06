@@ -129,18 +129,17 @@
   justify-content: space-between;
 }
 
-
-
-
 @media (max-width: 960px) {
   .formStyled {
     max-width: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   .formApplication {
     display: none;
   }
   .formBackground {
-    height: 20vh;
+    min-height: 20vh;
     padding: 40px;
     gap: 10px;
   }

@@ -30,17 +30,19 @@ const signupPageContent = {
   textMob: 'Расскажите про вашу задачу и мы настроим систему под вас',
   placeholderLogin: 'E-mail (используется в качестве основного логина)',
   placeholderLoginMob: 'E-mail (логин)',
+  policyTitle: 'Заполняя данную регистрационную форму, вы принимаете ',
+  policyTitleMob: 'Регистрируясь, вы принимаете ',
 };
 
 export default function SignUpPage() {
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const [isChecked, setIsChecked] = useState(false);
 
   const signUpPageProps: SumbmitHandlerType = {
-    apiPath: 'https://clientspace.ru/api/portal/client/access-request/',
+    apiPath: '/api/portal/client/access-request/',
     navigateTo: './aizekClientSpaceLanding/succsess',
     textError: 'Необходимо заполнить все поля',
   };
-  // const sumbmitHandlerSignUp = useSubmitHandler(signUpPageProps);
 
   const [input, setInput] = useState<State>({
     email: '',
@@ -176,9 +178,9 @@ export default function SignUpPage() {
           name="message"
           placeholder="Комментарий в свободной форме"
         />
-        {/* <div className="errorMsgContainer"></div> */}
+
         <div className="formBtnContainer">
-          <button className="signupBtn" type="submit">
+          <button disabled={!isChecked} className="signupBtn" type="submit">
             Зарегистрироваться
           </button>
           <span className="signinSignupSpan">
@@ -188,24 +190,32 @@ export default function SignUpPage() {
             </Link>
           </span>
         </div>
-        <label htmlFor="policyAgreement">
-          <input
-            type="checkbox"
-            className="checkboxOrigin"
-            id="policyAgreement"
-            name="policyAgreement"
-            value="policyAgreement"
-          />
-          <div className="checkboxCustom"></div>
-          Заполняя данную регистрационную форму, вы принимаете{' '}
-          <Link className="signinSignupLink" to="/policy">
-            правила сервиса
-          </Link>{' '}
-          и{' '}
-          <Link className="signinSignupLink" to="/dataprocessing">
-            обработки персональных данных
-          </Link>
-        </label>
+        <div className="policyAgreement">
+          <label htmlFor="policyAgreement">
+            <input
+              type="checkbox"
+              className="checkboxOrigin"
+              id="policyAgreement"
+              name="policyAgreement"
+              value="policyAgreement"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+            />
+            <div className="checkboxCustom"></div>
+          </label>
+          <p>
+            {window.innerWidth > 460
+              ? signupPageContent.policyTitle
+              : signupPageContent.policyTitleMob}
+            <Link className="signinSignupLink" to="/policy">
+              правила сервиса
+            </Link>{' '}
+            и{' '}
+            <Link className="signinSignupLink" to="/dataprocessing">
+              обработки персональных данных
+            </Link>
+          </p>
+        </div>
       </form>
     </div>
   );
@@ -216,3 +226,5 @@ export default function SignUpPage() {
 //   navigateTo: './aizekClientSpaceLanding/succsess',
 //   textError: 'Необходимо заполнить все поля',
 // };
+
+// const sumbmitHandlerSignUp = useSubmitHandler(signUpPageProps);

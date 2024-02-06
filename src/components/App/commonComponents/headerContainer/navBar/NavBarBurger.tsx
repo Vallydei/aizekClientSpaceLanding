@@ -66,7 +66,7 @@ export default function BurgerMenu() {
       </div>
 
       <div className="menuContainer">
-        <Link className="styledLink" to="/aizekClientSpaceLanding/auth">
+        <Link className="styledLink" to="https://clientspace.aizek.io">
           Вход
         </Link>
         <button className={`burger ${isOpen}`} onClick={toggleMenu}></button>

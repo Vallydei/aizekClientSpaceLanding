@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavBarDesktop from './NavBarDesctop';
 import NavBarBurger from './NavBarBurger';
+import './navBarStyles.css';
 
 export type Section = {
   id: string;
@@ -9,6 +10,23 @@ export type Section = {
 
 export default function Header(): JSX.Element {
   const [deviceWidth, setDeviceWidth] = useState<boolean>(window.innerWidth > 960);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,5 +41,9 @@ export default function Header(): JSX.Element {
     };
   }, []);
 
-  return <header>{deviceWidth ? <NavBarDesktop /> : <NavBarBurger />}</header>;
+  return (
+    <header className={`${scrolled ? 'scrolled' : ''}`}>
+      {deviceWidth ? <NavBarDesktop /> : <NavBarBurger />}
+    </header>
+  );
 }

@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../App/commonComponents/Button/Button';
 import './signInPageStyles.css';
 import '../../App/commonComponents/Form/formStyles.css';
 import { SumbmitHandlerType, useSubmitHandler } from '../../App/hooks/signInsignUpHandler';
-
 
 export default function SignIn() {
   const signInPageProps: SumbmitHandlerType = {
@@ -29,9 +27,10 @@ export default function SignIn() {
 
         <input className="formInput" name="login" type="text" placeholder="Логин (Email)" />
         <input className="formInput" name="password" type="text" placeholder="Пароль *****" />
-        <div className="errorMsgContainer"></div>
         <div className="formBtnContainer">
-          <Button type="submit">Войти</Button>
+          <button className="signinBtn" type="submit">
+            Войти
+          </button>
           <span className="signinSignupSpan">
             Нужен логин?{' '}
             <Link className="signinSignupLink" to="/aizekClientSpaceLanding/signup">

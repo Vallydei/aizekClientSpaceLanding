@@ -5,9 +5,47 @@
   overflow: hidden;
 }
 
+.signinBtn {
+  width: 475px;
+  height: 80px;
+  font-size: 32px;
+  background-color: #ef2a82;
+  color: #fff;
+  border-radius: 68px;
+  border: none;
+}
+
+.signinBtn:hover {
+  background-color: #f17bb0;
+}
+
+.signinBtn:active {
+  background-color: #e83186;
+  cursor: pointer;
+}
+
+.signinBtn:disabled {
+  background-color: #d9d9d9;
+  cursor: default;
+}
+
+.signinSignupLink {
+  color: #e83186;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
 @media (max-width: 960px) {
-    .signinPageContainer {
-height: 90vh;
-align-items: center;
-      }
+  .signinPageContainer {
+    height: 90vh;
+    align-items: center;
+  }
+  .signinBtn {
+    width: 100%;
+    font-size: 24px;
+    margin: 40px 0 60px;
+  }
+  .signinSignupLink {
+    display: inline;
+  }
 }

@@ -1,9 +1,17 @@
+.scrolled {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  opacity: 75%;
+}
+
 .flexBoxNav {
   display: flex;
   margin: 0 auto;
   width: 100%;
   background-color: #172755;
-  position: relative;
+  
 }
 
 .navbarBorder {
@@ -15,15 +23,16 @@
   width: 100%;
   display: flex;
   margin: 0 auto;
-  height: 10vh;
-  z-index: 4;
+  height: 10vh;  
   align-items: center;
+
 }
 
 .navList {
   display: flex;
   align-items: center;
   gap: 10px;
+  
 }
 
 .navLink {
@@ -31,6 +40,7 @@
   color: #8794ba;
   padding: 10px 15px;
   font-size: 16px;
+ 
 }
 
 .navLink:hover,
