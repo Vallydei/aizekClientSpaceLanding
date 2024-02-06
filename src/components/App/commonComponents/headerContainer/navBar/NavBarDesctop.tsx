@@ -31,7 +31,12 @@ export default function NavBarDesctop(): JSX.Element {
 
       const section = document.getElementById(sectionId);
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        // section.scrollIntoView({ behavior: 'smooth' });
+        const rect = section.getBoundingClientRect();
+        window.scrollTo({
+          top: rect.top + window.scrollY - 110,
+          behavior: 'smooth',
+        });
       }
     } catch (error) {
       console.error('Navigation failed:', error);
