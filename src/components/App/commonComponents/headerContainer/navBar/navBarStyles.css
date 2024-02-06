@@ -2,7 +2,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 3;
   opacity: 75%;
 }
 
@@ -11,7 +11,7 @@
   margin: 0 auto;
   width: 100%;
   background-color: #172755;
-  
+
 }
 
 .navbarBorder {
@@ -25,7 +25,7 @@
   margin: 0 auto;
   height: 10vh;  
   align-items: center;
-
+  z-index: 4;
 }
 
 .navList {
