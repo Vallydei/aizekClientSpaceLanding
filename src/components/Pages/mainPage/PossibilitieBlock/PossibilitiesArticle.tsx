@@ -37,7 +37,7 @@ export default function PossibilitiesArticle(): JSX.Element {
         <div key={possibilitie.id} className="flexBoxReports">
           <div style={{ order: index === 1 ? 1 : 'auto' }} className="contText">
             <Title>{possibilitie.title}</Title>
-            <Text className="bigger">
+            <Text >
               {window.innerWidth > 460 ? possibilitie.text : possibilitie.textMob}
             </Text>
           </div>

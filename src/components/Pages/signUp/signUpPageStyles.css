@@ -1,6 +1,6 @@
 .signupPageContainer {
   min-height: 80vh;
-  padding: 70px 0 70px;
+  padding: 70px 0 130px;
   display: flex;
   overflow: hidden;
 }
@@ -13,12 +13,10 @@
   color: #fff;
   border-radius: 68px;
   border: none;
-  
 }
 
 .signupBtn:hover {
   background-color: #f17bb0;
-  
 }
 
 .signupBtn:active {
@@ -27,7 +25,7 @@
 }
 
 .signupBtn:disabled {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   cursor: default;
 }
 
@@ -38,19 +36,18 @@
 }
 
 .policyAgreement {
-display: flex;
-width: 100%;
-align-items: space-between;
-text-align: start;
-gap: 20px;
-hyphens: auto;
-
+  display: flex;
+  width: 100%;
+  align-items: space-between;
+  text-align: start;
+  gap: 20px;
+  hyphens: auto;
+  position: relative;
 }
 
 .checkboxOrigin {
   position: absolute;
   opacity: 0;
- 
 }
 
 .checkboxCustom {
@@ -83,21 +80,20 @@ hyphens: auto;
   .signupPageContainer {
     min-height: 90vh;
     align-items: center;
-    padding: 10vh 20px 0;
+    padding: 10vh 20px 30px;
   }
   .signupBtn {
     width: 100%;
     font-size: 24px;
-    margin: 40px 0 60px;
+    margin-bottom: 60px;
   }
   .signinSignupLink {
     display: inline;
-
   }
 }
 @media (max-width: 480px) {
   .signupPageContainer {
-    padding: 15vh 20px 50px;
+    padding: 5vh 20px 50px;
   }
   .signinSignupLink {
     display: inline;

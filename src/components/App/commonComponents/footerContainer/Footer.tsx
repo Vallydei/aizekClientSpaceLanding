@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/Button';
+import { Button } from '../Button/Button';
 import './footerStyles.css';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ export default function Footer() {
             ))}
           </ul>
         </nav>
-        <Button className="contactBtn" base type="button">
+        <Button className="contactBtn" type="button">
           Написать нам
         </Button>
       </div>

@@ -93,34 +93,14 @@
   border: #d60b52 solid 1px;
 }
 
-.errorMsgContainer {
-  height: 60px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
-.errorMessage {
-  width: 100%;
-  color: #d60b52;
-  font-weight: 800;
-  opacity: 0;
-  animation: fadeInOut 5s forwards;
-}
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.notification {
+  font-size: 16px;
+  background-color: #d60b52;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
 }
 
 .formBtnContainer {
@@ -133,7 +113,7 @@
   .formStyled {
     max-width: 500px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   .formApplication {
     display: none;
@@ -153,8 +133,7 @@
 
 @media (max-width: 480px) {
   .formBackground {
-    padding: 75px 17px;
+    padding: 0 17px;
     height: 333px;
   }
-  
 }

@@ -1,19 +1,6 @@
 import React, { useRef, useState } from 'react';
-import Button from '../../../App/commonComponents/Button/Button';
+import { ButtonLarge } from '../../../App/commonComponents/Button/Button';
 import axios from 'axios';
-
-// type FormInput = {
-//   name: string;
-//   email: string;
-//   message: string;
-// };
-
-type State = {
-  email: string;
-  userName: string;
-  errors: IFieldErrors;
-  isSubmitted: boolean;
-};
 
 enum Errors {
   REQUIRED_FIELDS = 'Пожалуйста, заполните все обязательные поля',
@@ -22,16 +9,21 @@ enum Errors {
 }
 
 interface IFieldErrors {
-  mail?: Errors;
+  email?: Errors;
   userName?: Errors;
-  [key: string]: Errors | undefined;
 }
 
 export default function ApplicationForm() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const userRef = useRef<HTMLInputElement | null>(null);
+  const [showNotification, setShowNotification] = useState<string | null>(null);
 
-  const [input, setInput] = useState<State>({
+  const [input, setInput] = useState<{
+    email: string;
+    userName: string;
+    errors: IFieldErrors;
+    isSubmitted: boolean;
+  }>({
     email: '',
     userName: '',
     errors: {},
@@ -41,38 +33,23 @@ export default function ApplicationForm() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
 
-    if (name === 'email') {
-      setInput((prev) => ({
-        ...prev,
-        errors: { ...prev.errors },
-        isSubmitted: false,
-        email: value.trim(),
-      }));
-    }
-
-    if (name === 'userName') {
-      setInput((prev) => ({
-        ...prev,
-        errors: { ...prev.errors },
-        isSubmitted: false,
-        userName: value,
-      }));
-    }
+    setInput((prev) => ({
+      ...prev,
+      errors: { ...prev.errors },
+      isSubmitted: false,
+      [name]: value.trim(),
+    }));
   };
+
   const validateEmail = (email: string): boolean => /\S+@\S+\.\S+/.test(email);
 
   const validateFields = (): IFieldErrors => {
     const { email, userName } = input;
-    const errors: {
-      email?: Errors;
-      userName?: Errors;
-    } = {};
+    const errors: IFieldErrors = {};
 
-    const emailLength = email.length;
-
-    if (emailLength === 0) {
+    if (email.length === 0) {
       errors.email = Errors.REQUIRED_FIELDS;
-    } else if (emailLength < 4) {
+    } else if (email.length < 4) {
       errors.email = Errors.MIN_LENGTH;
     } else if (!validateEmail(email)) {
       errors.email = Errors.INVALID_EMAIL;
@@ -85,46 +62,42 @@ export default function ApplicationForm() {
     return errors;
   };
 
-  const sumbmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    const { email, userName } = input;
+  const showInvalidNotification = (errorMessage: string) => {
+    setShowNotification(errorMessage);
+    setTimeout(() => {
+      setShowNotification(null);
+    }, 3000);
+  };
 
+  const sumbmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const errors: IFieldErrors = validateFields();
+    const errors = validateFields();
+    const hasErrors = Object.keys(errors).length > 0;
 
-    if (Object.keys(errors).length) {
-      setInput((prevState) => ({
-        ...prevState,
-        errors,
-        isSubmitted: false,
-      }));
-      console.log(input);
+    setInput((prev) => ({ ...prev, errors, isSubmitted: true }));
+
+    if (hasErrors) {
       if (errors.email) {
         inputRef.current?.classList.add('errorInput');
+        showInvalidNotification(errors.email);
       }
       if (errors.userName) {
         userRef.current?.classList.add('errorInput');
+        showInvalidNotification(errors.userName);
       }
       return;
     }
 
     const response = await axios.post('https://clientspace.ru/api/portal/client/access-request/', {
-      email,
-      name: userName,
+      email: input.email,
+      name: input.userName,
     });
+
     if (response.data.error) {
-      setInput((prevState) => ({
-        ...prevState,
-        errors,
-        isSubmitted: false,
-      }));
+      setInput((prev) => ({ ...prev, errors, isSubmitted: false }));
     } else {
-      setInput({
-        errors: {},
-        email: '',
-        userName: '',
-        isSubmitted: true,
-      });
+      setInput({ email: '', userName: '', errors: {}, isSubmitted: true });
     }
   };
   return (
@@ -160,22 +133,10 @@ export default function ApplicationForm() {
           maxLength={1000}
           autoComplete="off"
         />
+        {showNotification && <div className="notification">{showNotification}</div>}
         <textarea className="formTextarea" name="message" placeholder="Ваш вопрос" />
-        <Button type="submit">Отправить запрос</Button>
+        <ButtonLarge type="submit">Отправить запрос</ButtonLarge>
       </form>
     </div>
   );
 }
-
-// const sumbmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-//   e.preventDefault();
-//   const formData = Object.fromEntries(new FormData(e.currentTarget)) as FormInput;
-//   console.log(formData);
-//   try {
-//     await axios.post('/api/application', formData);
-//     e.currentTarget.reset();
-//     document.getElementById('nav')!.scrollIntoView({ behavior: 'smooth' });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };

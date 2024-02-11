@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../../App/commonComponents/Button/Button';
 import './headerStyles.css';
+import { ButtonMedium } from '../../../App/commonComponents/Button/Button';
 
 export default function FirstBlock(): JSX.Element {
   const onClick = async (sectionId: string) => {
@@ -25,9 +25,9 @@ export default function FirstBlock(): JSX.Element {
               Быстрая настройка для стандартных задач и данных, кастомная доработка для продвинутых
               и продуктивных
             </p>
-            <Button onClick={() => onClick('application')} medium className="accessBtn">
+            <ButtonMedium onClick={() => onClick('application')} className="accessBtn">
               Получить доступ
-            </Button>
+            </ButtonMedium>
           </div>
         </div>
       </div>

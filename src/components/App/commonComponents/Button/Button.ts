@@ -1,17 +1,9 @@
 import styled from '@emotion/styled';
-import isPropValid from '@emotion/is-prop-valid';
 
-type CustomButtonProps = {
-  base?: boolean;
-  medium?: boolean;
-};
-
-const Button = styled('button', {
-  shouldForwardProp: (prop) => isPropValid(prop),
-})<CustomButtonProps>`
-  width: ${(props) => (props.base ? '160px' : props.medium ? '288px' : '475px')};
-  height: ${(props) => (props.base ? '40px' : props.medium ? '50px' : '80px')};
-  font-size: ${(props) => (props.base ? '16px' : props.medium ? '18px' : '32px')};
+export const Button = styled('button')`
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
   background-color: #ef2a82;
   color: #fff;
   border-radius: 68px;
@@ -21,7 +13,7 @@ const Button = styled('button', {
   }
 
   &:active {
-    background-color: #E83186;
+    background-color: #e83186;
   }
 
   @media (max-width: 960px) {
@@ -32,4 +24,14 @@ const Button = styled('button', {
   }
 `;
 
-export default Button;
+export const ButtonMedium = styled(Button)`
+  width: 288px;
+  height: 50px;
+ `;
+
+export const ButtonLarge = styled(Button)`
+  width: 475px;
+  height: 80px;
+  font-size: 32px;
+`;
+

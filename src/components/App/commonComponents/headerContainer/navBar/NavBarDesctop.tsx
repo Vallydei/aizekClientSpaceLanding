@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Logo from '../Logo';
-import Button from '../../Button/Button';
+import { Button } from '../../Button/Button';
 import './navBarStyles.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -64,8 +64,8 @@ export default function NavBarDesctop(): JSX.Element {
           >
             Вход
           </Link>
-          <div className="nacContainer">
-            <Button onClick={() => onClick('application')} base className="btnApply">
+          <div>
+            <Button onClick={() => onClick('application')} >
               Заявка
             </Button>
           </div>

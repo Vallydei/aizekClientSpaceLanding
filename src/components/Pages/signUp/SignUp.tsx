@@ -1,16 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './signUpPageStyles.css';
 import '../../App/commonComponents/Form/formStyles.css';
-// import { useSubmitHandler } from '../../App/hooks/signInsignUpHandler';
-import type { SumbmitHandlerType } from '../../App/hooks/signInsignUpHandler';
 import axios from 'axios';
 
 type State = {
+  userName: string;
   email: string;
   company: string;
+  password: string;
   errors: IFieldErrors;
   isSubmitted: boolean;
+};
+
+type SumbmitHandlerType = {
+  apiPath: string;
+  navigateTo: string;
 };
 
 enum Errors {
@@ -20,7 +25,9 @@ enum Errors {
 }
 
 interface IFieldErrors {
-  mail?: Errors;
+  userName?: Errors;
+  password?: Errors;
+  email?: Errors;
   company?: Errors;
   [key: string]: Errors | undefined;
 }
@@ -35,18 +42,19 @@ const signupPageContent = {
 };
 
 export default function SignUpPage() {
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [showNotification, setShowNotification] = useState<string | null>(null);
   const [isChecked, setIsChecked] = useState(false);
 
   const signUpPageProps: SumbmitHandlerType = {
     apiPath: '/api/portal/client/access-request/',
     navigateTo: './aizekClientSpaceLanding/succsess',
-    textError: 'Необходимо заполнить все поля',
   };
 
   const [input, setInput] = useState<State>({
+    userName: '',
     email: '',
     company: '',
+    password: '',
     errors: {},
     isSubmitted: false,
   });
@@ -54,32 +62,18 @@ export default function SignUpPage() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
 
-    if (name === 'email') {
-      setInput((prev) => ({
-        ...prev,
-        errors: { ...prev.errors },
-        isSubmitted: false,
-        email: value.trim(),
-      }));
-    }
-
-    if (name === 'company') {
-      setInput((prev) => ({
-        ...prev,
-        errors: { ...prev.errors },
-        isSubmitted: false,
-        company: value,
-      }));
-    }
+    setInput((prev) => ({
+      ...prev,
+      errors: { ...prev.errors },
+      isSubmitted: false,
+      [name]: value.trim(),
+    }));
   };
   const validateEmail = (email: string): boolean => /\S+@\S+\.\S+/.test(email);
 
   const validateFields = (): IFieldErrors => {
-    const { email, company } = input;
-    const errors: {
-      email?: Errors;
-      company?: Errors;
-    } = {};
+    const { userName, email, company, password } = input;
+    const errors: IFieldErrors = {};
 
     const emailLength = email.length;
 
@@ -95,12 +89,26 @@ export default function SignUpPage() {
       errors.company = Errors.REQUIRED_FIELDS;
     }
 
+    if (userName.length === 0) {
+      errors.userName = Errors.REQUIRED_FIELDS;
+    }
+    if (password.length === 0) {
+      errors.password = Errors.REQUIRED_FIELDS;
+    } else if (password.length < 6) {
+      errors.password = Errors.MIN_LENGTH;
+    }
+
     return errors;
   };
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-    const { email, company } = input;
+  const showInvalidNotification = (errorMessage: string) => {
+    setShowNotification(errorMessage);
+    setTimeout(() => {
+      setShowNotification(null);
+    }, 3000);
+  };
 
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
     const errors: IFieldErrors = validateFields();
@@ -112,27 +120,43 @@ export default function SignUpPage() {
         isSubmitted: false,
       }));
 
-      if (errors.email) {
-        inputRef.current?.focus();
+      const showError = (errorField: string) => {
+        showInvalidNotification(errorField);
+      };
+
+      if (errors.userName) {
+        showError(errors.userName);
       } else if (errors.company) {
-        inputRef.current?.focus();
+        showError(errors.company);
+      } else if (errors.email) {
+        showError(errors.email);
+      } else if (errors.password) {
+        showError(errors.password);
       }
       return;
     }
-    const response = await axios.post(signUpPageProps.apiPath, { email, organisation: company });
-    if (response.data.error) {
+    try {
+      await axios.post(signUpPageProps.apiPath, {
+        userName: input.userName,
+        email: input.email,
+        organisation: input.company,
+      });
+
+      setInput({
+        errors: {},
+        userName: '',
+        email: '',
+        company: '',
+        password: '',
+        isSubmitted: true,
+      });
+    } catch (error) {
       setInput((prevState) => ({
         ...prevState,
         errors,
         isSubmitted: false,
       }));
-    } else {
-      setInput({
-        errors: {},
-        email: '',
-        company: '',
-        isSubmitted: true,
-      });
+      console.error('Error submitting form:', error);
     }
   };
 
@@ -145,11 +169,17 @@ export default function SignUpPage() {
             {window.innerWidth > 460 ? signupPageContent.text : signupPageContent.textMob}
           </p>
         </div>
-        <input className="formInput" name="name" type="text" placeholder="Имя" />
         <input
-          ref={inputRef}
-          className="formInput"
-          name="companyName"
+          className={`formInput ${input.errors.userName ? 'errorInput' : ''}`}
+          name="userName"
+          type="text"
+          placeholder="Имя"
+          onChange={handleInputChange}
+          value={input.userName}
+        />
+        <input
+          className={`formInput ${input.errors.company ? 'errorInput' : ''}`}
+          name="company"
           type="text"
           placeholder="Название компании"
           onChange={handleInputChange}
@@ -158,8 +188,7 @@ export default function SignUpPage() {
           autoComplete="off"
         />
         <input
-          ref={inputRef}
-          className="formInput"
+          className={`formInput ${input.errors.email ? 'errorInput' : ''}`}
           name="email"
           type="email"
           placeholder={
@@ -172,13 +201,22 @@ export default function SignUpPage() {
           maxLength={1000}
           autoComplete="off"
         />
-        <input className="formInput" name="password" type="text" placeholder="Пароль *****" />
+        <input
+          className={`formInput ${input.errors.password ? 'errorInput' : ''}`}
+          name="password"
+          type="text"
+          placeholder="Пароль *****"
+          onChange={handleInputChange}
+          value={input.password}
+        />
         <textarea
           className="formTextarea"
           name="message"
           placeholder="Комментарий в свободной форме"
         />
-
+        {showNotification && (
+          <div className="notification notificationSignUp">{showNotification}</div>
+        )}
         <div className="formBtnContainer">
           <button disabled={!isChecked} className="signupBtn" type="submit">
             Зарегистрироваться
@@ -220,11 +258,3 @@ export default function SignUpPage() {
     </div>
   );
 }
-
-// const signUpPageProps: SumbmitHandlerType = {
-//   apiPath: '/api/auth/signup',
-//   navigateTo: './aizekClientSpaceLanding/succsess',
-//   textError: 'Необходимо заполнить все поля',
-// };
-
-// const sumbmitHandlerSignUp = useSubmitHandler(signUpPageProps);
