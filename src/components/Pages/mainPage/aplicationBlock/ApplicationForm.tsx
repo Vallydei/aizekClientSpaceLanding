@@ -133,8 +133,8 @@ export default function ApplicationForm() {
           maxLength={1000}
           autoComplete="off"
         />
-        {showNotification && <div className="notification">{showNotification}</div>}
         <textarea className="formTextarea" name="message" placeholder="Ваш вопрос" />
+        {showNotification && <div className="notification">{showNotification}</div>}
         <ButtonLarge type="submit">Отправить запрос</ButtonLarge>
       </form>
     </div>

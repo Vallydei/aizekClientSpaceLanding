@@ -14,8 +14,8 @@ function App(): JSX.Element {
       <Header />
       <Routes>
         <Route path="/aizekClientSpaceLanding/" element={<MainPage />} />
-        <Route path="/aizekClientSpaceLanding/auth" element={<SignInPage />} />
-        <Route path="/aizekClientSpaceLanding/signup" element={<SignUpPage />} />
+        <Route path="/aizekClientSpaceLanding/auth/" element={<SignInPage />} />
+        <Route path="/aizekClientSpaceLanding/signup/" element={<SignUpPage />} />
       </Routes>
       <Footer />
     </>
