@@ -19,7 +19,7 @@ const signInPageProps: SumbmitHandlerType = {
   navigateTo: './somewhere',
 };
 
-export default function SignIn() {
+export default function SignInPage() {
   const [showNotification, setShowNotification] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState({
     login: '',

@@ -1,0 +1,8 @@
+.scrolled {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    opacity: 75%;
+  }
+  

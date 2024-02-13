@@ -1,3 +1,32 @@
+.pricesContainer {
+  background: url('../img/background-bottom.png') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.flexBoxPrices {
+  display: flex;
+  flex-direction: column;
+  max-width: 1180px;
+  gap: 30px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #8794ba;
+}
+
+.pricesTitle {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 800;
+  padding-top: 260px;
+}
+
+.pricesText {
+  padding: 0 120px;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -20,20 +49,6 @@
   object-fit: cover;
 }
 
-.pricesSwiper {
-  position: relative;
-  padding-bottom: 90px;
-}
-
-.pricesSwiper::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #8794ba;
-}
 .swiperComponent {
   display: flex;
   flex-direction: column;
@@ -47,12 +62,6 @@
   border-radius: 38px;
   font-size: 30px;
   font-weight: 800;
-}
-
-.textPrices {
-  color: #8794ba;
-  font-size: 18px;
-  line-height: 1.5;
 }
 
 .swiperComponent:hover {
@@ -90,7 +99,32 @@
   border: 1px solid #2a407c;
 }
 
+.pricesSwiper {
+  position: relative;
+  padding-bottom: 90px;
+}
+
+.pricesSwiper::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #8794ba;
+}
+
+.textPrices {
+  color: #8794ba;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 @media (max-width: 1300px) {
+  .pricesTitle {
+    font-size: 30px;
+    padding-left: 20px;
+  }
   .swiper {
     padding-left: 20px;
     padding-right: 20px;
@@ -101,16 +135,12 @@
 }
 
 @media (max-width: 960px) {
-  .swiper {
-    padding-top: 42px;
+  .flexBoxPrices {
+    align-items: flex-start;
+    font-size: 18px;
+    text-align: start;
   }
-  .buttonPrices {
-    cursor: pointer;
-    background-color: #ef2a82;
-    border: none;
-  }
-  .swiperComponent {
-    background-color: #ffffff;
-    color: #0f1f4b;
+  .pricesText {
+    padding: 0 20px;
   }
 }

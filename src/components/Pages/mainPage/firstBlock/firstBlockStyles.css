@@ -1,7 +1,7 @@
 .flexBoxHeader {
   display: flex;
   flex-direction: column;
-  background: url('/img/background-top.png') no-repeat;
+  background: url('../img/background-top.png') no-repeat;
   background-size: 100% 815px;
   width: 100%;
   min-height: 815px;
@@ -16,7 +16,7 @@
   width: 670px;
   height: 600px;
   border-radius: 38px;
-  background: url('/img/main-screen-large.svg') no-repeat;
+  background: url('../img/main-screen-large.svg') no-repeat;
   background-size: contain;
   z-index: 3;
 }
@@ -28,7 +28,7 @@
   height: 247px;
   top: 180px;
   right: 400px;
-  background: url('/img/main-screen-small.svg') no-repeat;
+  background: url('../img/main-screen-small.svg') no-repeat;
   background-size: contain;
   z-index: 3;
 }
@@ -44,7 +44,7 @@
 .flexBoxHeaderDescription::before {
   content: '';
   position: absolute;
-  background: url('/img/tech_icon_cs-grow.png') no-repeat;
+  background: url('../img/tech_icon_cs-grow.png') no-repeat;
   background-size: contain;
   top: -130px;
   left: 0;
@@ -56,7 +56,7 @@
 .flexBoxHeaderDescription::after {
   content: '';
   position: absolute;
-  background-image: url('/img/Subtract1.png');
+  background-image: url('../img/Subtract1.png');
   background-repeat: no-repeat;
   background-size: cover;
   top: -120px;

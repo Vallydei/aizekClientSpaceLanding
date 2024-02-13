@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
-import './burgerMenuStyles.css';
+import './navBarBurgerStyles.css';
 import Logo from '../Logo';
 
 const sections = [

@@ -3,9 +3,9 @@ import GlobalStyles from './global';
 import Footer from './commonComponents/footerContainer/Footer';
 import { Routes, Route } from 'react-router-dom';
 import MainPage from '../Pages/mainPage/MainPage';
-import SignInPage from '../Pages/signIn/SignIn';
-import SignUpPage from '../Pages/signUp/SignUp';
-import Header from './commonComponents/headerContainer/navBar/Header';
+import SignInPage from '../Pages/signInPage/SignInPage';
+import SignUpPage from '../Pages/signUpPage/SignUpPage';
+import Header from './commonComponents/headerContainer/Header';
 
 function App(): JSX.Element {
   return (

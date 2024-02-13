@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import NavBarDesktop from './NavBarDesctop';
-import NavBarBurger from './NavBarBurger';
-import './navBarStyles.css';
+import NavBarDesktop from './navBarDesctop/NavBarDesctop';
+import NavBarBurger from './navBarMob/NavBarBurger';
+import './headerStyles.css';
 
 export type Section = {
   id: string;

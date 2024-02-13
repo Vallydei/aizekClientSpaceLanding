@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Logo from '../Logo';
 import { Button } from '../../Button/Button';
-import './navBarStyles.css';
+import './navBarDesctopStyles.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const sections = [
@@ -65,9 +65,7 @@ export default function NavBarDesctop(): JSX.Element {
             Вход
           </Link>
           <div>
-            <Button onClick={() => onClick('application')} >
-              Заявка
-            </Button>
+            <Button onClick={() => onClick('application')}>Заявка</Button>
           </div>
         </div>
       </div>

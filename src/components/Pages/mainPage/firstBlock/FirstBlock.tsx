@@ -1,5 +1,5 @@
 import React from 'react';
-import './headerStyles.css';
+import './firstBlockStyles.css';
 import { ButtonMedium } from '../../../App/commonComponents/Button/Button';
 
 export default function FirstBlock(): JSX.Element {
