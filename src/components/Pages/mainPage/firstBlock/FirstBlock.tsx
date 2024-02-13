@@ -16,7 +16,7 @@ export default function FirstBlock(): JSX.Element {
 
   return (
     <>
-      <div className="flexBoxHeader">
+      <div id='firstBlock'className="flexBoxHeader">
         <div className="flexBoxHeaderDescription">
           <img className="mainImg" src="./img/main.svg" />
           <div className="boxHeader">

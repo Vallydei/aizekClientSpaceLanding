@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../Button/Button';
 import './footerStyles.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const footerProps = {
   logoImg: './svg/footerLogo.svg',
@@ -13,10 +13,32 @@ const footerNav = [
   // { id: 4, label: 'Коннекторы', link: '/' },
 ];
 export default function Footer() {
+  const navigate = useNavigate();
+  const onClick = async () => {
+    try {
+      if (location.pathname !== '/aizekClientSpaceLanding/') {
+        await navigate('/aizekClientSpaceLanding/');
+        const navBar = document.querySelector('.flexBoxNav');
+        navBar?.classList.remove('navbarBorder');
+      }
+
+      const section = document.getElementById('firstBlock');
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        window.scrollTo({
+          top: rect.top + window.scrollY - 110,
+          behavior: 'smooth',
+        });
+      }
+    } catch (error) {
+      console.error('Navigation failed:', error);
+    }
+  };
+
   return (
     <footer className="footer" id="contacts">
       <div className="footerNav">
-        <div>
+        <div style={{ cursor: 'pointer' }} onClick={() => onClick()}>
           <img className="footerLogo" src={footerProps.logoImg} alt="logo" />
         </div>
         <nav>
